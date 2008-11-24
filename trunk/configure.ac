@@ -3,7 +3,7 @@ dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.58)
 
 dnl OK, autoconf stuff first
-AC_INIT(Y, 0.2.1, markbt@efaref.net, Y)
+AC_INIT(Y, 0.2.7, neochapay@gmail.com, Y)
 AC_COPYRIGHT([Copyright 2002, Mark Thomas <markbt@efaref.net>
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
