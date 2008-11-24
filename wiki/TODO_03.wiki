@@ -1,6 +1,6 @@
 Approximate roadmap for version 0.3
 
-# Create all simple widgets
+ # *Create all simple widgets*
     *  ~~Button~~
     * Canvas
     * ~~CheckBox~~
@@ -25,7 +25,8 @@ Approximate roadmap for version 0.3
     * StatusBar
     * ToolBar
     * Window
-# Create simple WM
+
+ # *Create simple WM*
     * Add menu
     * Add panel
     * Create some themes (present or where no suitable)
