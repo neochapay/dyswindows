@@ -1,0 +1,39 @@
+#labels Phase-Implementation
+Approximate roadmap for version 0.3 
+
+# *Create all widgets*
+
+    * Calendar
+    * Dialog, Colour
+    * Dialog, Error
+    * Dialog, File
+    * Dialog, Font
+    * Dialog, Message
+    * Dialog, Page Setup
+    * Dialog, Print
+    * Dialog, Properties
+    * Dialog, Text Input
+    * EditBox
+    * GLCanvas
+    * GridView
+    * GroupBox
+    * IconView
+    * ListBox
+    * ListView
+    * MediaPlayer
+    * TabWidget
+    * TextView
+    * ToolDock
+    * TreeView
+    * Workspace
+    * PositionLayout
+    * GridLayout
+    * LayerLayout
+    * HorizontalLayout
+    * VerticalLayout
+
+# *Create some application*
+    * Web Browser (maybe WebKit based)
+    * Configure tools
+    * Image Viewer
+    * Media Player (maybe Xine based)
