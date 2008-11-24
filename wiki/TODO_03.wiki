@@ -1,0 +1,29 @@
+#Create all simple widgets
+    *  ~~Button~~
+    * Canvas
+    * ~~CheckBox~~
+    * ComboBox
+    * DateTimeEdit
+    * Edit
+    * Frame
+    * ~~Label~~
+    * LED
+    * ImageViewer
+    * Menu
+    * MenuBar
+    * ProgressBar
+    * ~~RadioButton~~
+    * Ruler
+    * ScrollBar
+    * ScrollView
+    * Separator
+    * Slider
+    * SpinBox
+    * Splitter
+    * StatusBar
+    * ToolBar
+    * Window
+#Create simple WM
+    * Add menu
+    * Add panel
+    * Create some themes (present or where no suitable)
