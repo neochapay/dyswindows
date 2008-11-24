@@ -1,5 +1,4 @@
-#Approximate roadmap for version 0.3
-
+#labels Featured,Phase-Implementation
 Approximate roadmap for version 0.3
 
  # *Create all simple widgets*
