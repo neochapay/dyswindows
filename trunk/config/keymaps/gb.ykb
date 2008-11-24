@@ -1,0 +1,73 @@
+include "basic.ykb";
+include "qwerty.ykb";
+include "pc.ykb";
+include "iso9995.ykb";
+include "deadkeys.ykb";
+
+key gb
+{
+  # Alphanumerics
+  TLDE "`", "¬", "|", "|";
+  numeric_1 "1", "!";
+  numeric_2 "2", "\"";
+  numeric_3 "3", "£";
+  numeric_4 "4", "$", "€", "¼";
+  numeric_5 "5", "%";
+  numeric_6 "6", "^";
+  numeric_7 "7", "&";
+  numeric_8 "8", "*";
+  numeric_9 "9", "(";
+  numeric_0 "0", ")";
+  AE11 "-", "_";
+  AE12 "=", "+";
+
+  alpha_q "q", "Q";
+  alpha_w "w", "W";
+  alpha_e "e", "E";
+  alpha_r "r", "R";
+  alpha_t "t", "T";
+  alpha_y "y", "Y";
+  alpha_u "u", "U";
+  alpha_i "i", "I";
+  alpha_o "o", "O";
+  alpha_p "p", "P";
+  AD11 "[", "{";
+  AD12 "]", "}";
+
+  alpha_a "a", "A";
+  alpha_s "s", "S";
+  alpha_d "d", "D";
+  alpha_f "f", "F";
+  alpha_g "g", "G";
+  alpha_h "h", "H";
+  alpha_j "j", "J";
+  alpha_k "k", "K";
+  alpha_l "l", "L";
+  AC10 ";", ":";
+  AC11 "'", "@";
+  BKSL "#", "~";
+
+  LSGT "\\", "|", "|", "¦";
+  alpha_z "z", "Z";
+  alpha_x "x", "X";
+  alpha_c "c", "C";
+  alpha_v "v", "V";
+  alpha_b "b", "B";
+  alpha_n "n", "N";
+  alpha_m "m", "M";
+  AB08 ",", "<";
+  AB09 ".", ">";
+  AB10 "/", "?";
+
+  space " ", " ", " ", " ";
+}
+
+keymap gb
+{
+  include keymap basic;
+  include keycode qwerty;
+  include keymap iso9995;
+  include key gb;
+  include seq pc105;
+  include keymap deadkeys;
+}

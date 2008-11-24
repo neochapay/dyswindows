@@ -1,0 +1,42 @@
+keycode qwerty
+{
+  numeric_1 = AE01;
+  numeric_2 = AE02;
+  numeric_3 = AE03;
+  numeric_4 = AE04;
+  numeric_5 = AE05;
+  numeric_6 = AE06;
+  numeric_7 = AE07;
+  numeric_8 = AE08;
+  numeric_9 = AE09;
+  numeric_0 = AE10;
+
+  alpha_q = AD01;
+  alpha_w = AD02;
+  alpha_e = AD03;
+  alpha_r = AD04;
+  alpha_t = AD05;
+  alpha_y = AD06;
+  alpha_u = AD07;
+  alpha_i = AD08;
+  alpha_o = AD09;
+  alpha_p = AD10;
+
+  alpha_a = AC01;
+  alpha_s = AC02;
+  alpha_d = AC03;
+  alpha_f = AC04;
+  alpha_g = AC05;
+  alpha_h = AC06;
+  alpha_j = AC07;
+  alpha_k = AC08;
+  alpha_l = AC09;
+
+  alpha_z = AB01;
+  alpha_x = AB02;
+  alpha_c = AB03;
+  alpha_v = AB04;
+  alpha_b = AB05;
+  alpha_n = AB06;
+  alpha_m = AB07;
+}

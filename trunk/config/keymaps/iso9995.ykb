@@ -1,0 +1,97 @@
+keycode iso9995
+{
+  dead_cedilla = AE12[altgr/shift|altgr];
+  dead_ogonek = AE12[shift|altgr/shift|altgr];
+  dead_diaeresis = AD11[altgr/shift|altgr];
+  dead_abovering = AD11[shift|altgr/shift|altgr];
+  dead_tilde = AD12[altgr/shift|altgr];
+  dead_macron = AD12[shift|altgr/shift|altgr];
+  dead_acute = AC10[altgr/shift|altgr];
+  dead_doubleacute = AC10[shift|altgr/shift|altgr];
+  dead_circumflex = AC11[altgr/shift|altgr];
+  dead_caron = AC11[shift|altgr/shift|altgr];
+  dead_grave = BKSL[altgr/shift|altgr];
+  dead_breve = BKSL[shift|altgr/shift|altgr];
+  dead_belowdot = AB10[altgr/shift|altgr];
+  dead_abovedot = AB10[shift|altgr/shift|altgr];
+}
+
+keycode name iso9995
+{
+  dead_cedilla = "dead_cedilla";
+  dead_ogonek = "dead_ogonek";
+  dead_diaeresis = "dead_diaeresis";
+  dead_abovering = "dead_abovering";
+  dead_tilde = "dead_tilde";
+  dead_macron = "dead_macron";
+  dead_acute = "dead_acute";
+  dead_doubleacute = "dead_doubleacute";
+  dead_circumflex = "dead_circumflex";
+  dead_caron = "dead_caron";
+  dead_grave = "dead_grave";
+  dead_breve = "dead_breve";
+  dead_belowdot = "dead_belowdot";
+  dead_abovedot = "dead_abovedot";
+}
+
+key iso9995
+{
+  TLDE undef, undef, "¬", "¬";
+  AE01 undef, undef, "¹", "¡";
+  AE02 undef, undef, "²", "⅛";
+  AE03 undef, undef, "³", "£";
+  AE04 undef, undef, "¼", "$";
+  AE05 undef, undef, "½", "⅜";
+  AE06 undef, undef, "¾", "⅝";
+  AE07 undef, undef, "{", "⅞";
+  AE08 undef, undef, "[", "™";
+  AE09 undef, undef, "]", "±";
+  AE10 undef, undef, "}", "°";
+  AE11 undef, undef, "\\", "¿";
+  AE12 undef, undef, "", "";
+
+  AD01 undef, undef, "@", "Ω";
+  AD02 undef, undef, "ł", "Ł";
+  AD03 undef, undef, "œ", "Œ";
+  AD04 undef, undef, "¶", "®";
+  AD05 undef, undef, "ŧ", "Ŧ";
+  AD06 undef, undef, "←", "¥";
+  AD07 undef, undef, "↓", "↑";
+  AD08 undef, undef, "→", "ı";
+  AD09 undef, undef, "ø", "Ø";
+  AD10 undef, undef, "þ", "Þ";
+  AD11 undef, undef, "", "";
+  AD12 undef, undef, "", "";
+
+  AC01 undef, undef, "æ", "Æ";
+  AC02 undef, undef, "ß", "§";
+  AC03 undef, undef, "ð", "Ð";
+  AC04 undef, undef, "đ", "ª";
+  AC05 undef, undef, "ŋ", "Ŋ";
+  AC06 undef, undef, "ħ", "Ħ";
+  AC07 undef, undef, "ĳ", "Ĳ";
+  AC08 undef, undef, "ĸ", "&";
+  AC09 undef, undef, "ł", "Ł";
+  AC10 undef, undef, "", "";
+  AC11 undef, undef, "", "";
+  AC12 undef, undef, "", "";
+  BKSL undef, undef, "", "";
+
+  AB01 undef, undef, "«", "<";
+  AB02 undef, undef, "»", ">";
+  AB03 undef, undef, "¢", "©";
+  AB04 undef, undef, "“", "`";
+  AB05 undef, undef, "”", "'";
+  AB06 undef, undef, "ŉ", "♪";
+  AB07 undef, undef, "µ", "º";
+  AB08 undef, undef, "─", "*";
+  AB09 undef, undef, "·", "÷";
+  AB10 undef, undef, "", "";
+}
+
+abstract keymap iso9995
+{
+  include keycode iso9995;
+  include key iso9995;
+  include keycode name iso9995;
+}

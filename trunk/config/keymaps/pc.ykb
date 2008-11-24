@@ -1,0 +1,38 @@
+seq pc105
+{
+  escape[*] event("key:escape");
+  backspace[*] event("key:backspace");
+  tab[*] event("key:tab");
+  return[*] event("key:return");
+
+  FK01[*] event("key:FK01");
+  FK02[*] event("key:FK02");
+  FK03[*] event("key:FK03");
+  FK04[*] event("key:FK04");
+  FK05[*] event("key:FK05");
+  FK06[*] event("key:FK06");
+  FK07[*] event("key:FK07");
+  FK08[*] event("key:FK08");
+  FK09[*] event("key:FK09");
+  FK10[*] event("key:FK10");
+  FK11[*] event("key:FK11");
+  FK12[*] event("key:FK12");
+
+  print_screen[*] event("key:print screen");
+  sysrq[*] event("key:sysrq");
+  scroll_lock[*] event("key:scroll lock");
+  pause[*] event("key:pause");
+  break[*] event("key:break");
+
+  insert[*] event("key:insert");
+  home[*] event("key:home");
+  page_up[*] event("key:page up");
+  delete[*] event("key:delete");
+  end[*] event("key:end");
+  page_down[*] event("key:page down");
+
+  up[*] event("key:up");
+  down[*] event("key:down");
+  left[*] event("key:left");
+  right[*] event("key:right");
+}

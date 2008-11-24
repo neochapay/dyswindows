@@ -1,0 +1,613 @@
+include "basic.ykb";
+include "qwerty.ykb";
+include "pc.ykb";
+
+keycode jp106
+{
+  eisu_toggle = caps_lock[shift];
+  hiragana = hiragana_katakana;
+  katakana = hiragana_katakana[shift];
+  romaji = hiragana_katakana[meta];
+  muhenkan = NFER;
+  henkan = XFER;
+  zenkouho = henkan[meta];
+}
+
+key jp106_zenkaku_alphanumeric
+{
+  numeric_1 "１", "！";
+  numeric_2 "２", "″";
+  numeric_3 "３", "＃";
+  numeric_4 "４", "＄";
+  numeric_5 "５", "％";
+  numeric_6 "６", "＆";
+  numeric_7 "７", "′";
+  numeric_8 "８", "（";
+  numeric_9 "９", "）";
+  numeric_0 "０", "〜";
+  AE11 "−", "＝";
+  AE12 "＾", "〜";
+  AE13 "￥", "｜";
+
+  alpha_q "ｑ", "Ｑ";
+  alpha_w "ｗ", "Ｗ";
+  alpha_e "ｅ", "Ｅ";
+  alpha_r "ｒ", "Ｒ";
+  alpha_t "ｔ", "Ｔ";
+  alpha_y "ｙ", "Ｙ";
+  alpha_u "ｕ", "Ｕ";
+  alpha_i "ｉ", "Ｉ";
+  alpha_o "ｏ", "Ｏ";
+  alpha_p "ｐ", "Ｐ";
+  AD11 "＠", "‘";
+  AD12 "［", "｛";
+
+  alpha_a "ａ", "Ａ";
+  alpha_s "ｓ", "Ｓ";
+  alpha_d "ｄ", "Ｄ";
+  alpha_f "ｆ", "Ｆ";
+  alpha_g "ｇ", "Ｇ";
+  alpha_h "ｈ", "Ｈ";
+  alpha_j "ｊ", "Ｊ";
+  alpha_k "ｋ", "Ｋ";
+  alpha_l "ｌ", "Ｌ";
+  AC10 "；", "＋";
+  AC11 "：", "＊";
+  AC12 "］", "｝";
+
+  alpha_z "ｚ", "Z";
+  alpha_x "ｘ", "X";
+  alpha_c "ｃ", "C";
+  alpha_v "ｖ", "V";
+  alpha_b "ｂ", "B";
+  alpha_n "ｎ", "N";
+  alpha_m "ｍ", "M";
+  AB08 "、", "＜";
+  AB09 "。", "＞";
+  AB10 "／", "？";
+  AB11 "＼", "＿";
+
+  space "　", "　", "　", "　";
+}
+
+key jp106_hankaku_alphanumeric
+{
+  numeric_1 "1", "!";
+  numeric_2 "2", "\"";
+  numeric_3 "3", "#";
+  numeric_4 "4", "$";
+  numeric_5 "5", "%";
+  numeric_6 "6", "&";
+  numeric_7 "7", "'";
+  numeric_8 "8", "(";
+  numeric_9 "9", ")";
+  numeric_0 "0", "~";
+  AE11 "-", "=";
+  AE12 "^", "~";
+  AE13 "¥", "|";
+
+  alpha_q "q", "Q";
+  alpha_w "w", "W";
+  alpha_e "e", "E";
+  alpha_r "r", "R";
+  alpha_t "t", "T";
+  alpha_y "y", "Y";
+  alpha_u "u", "U";
+  alpha_i "i", "I";
+  alpha_o "o", "O";
+  alpha_p "p", "P";
+  AD11 "@", "`";
+  AD12 "[", "{";
+
+  alpha_a "a", "A";
+  alpha_s "s", "S";
+  alpha_d "d", "D";
+  alpha_f "f", "F";
+  alpha_g "g", "G";
+  alpha_h "h", "H";
+  alpha_j "j", "J";
+  alpha_k "k", "K";
+  alpha_l "l", "L";
+  AC10 ";", "+";
+  AC11 ":", "*";
+  AC12 "]", "}";
+
+  alpha_z "z", "Z";
+  alpha_x "x", "X";
+  alpha_c "c", "C";
+  alpha_v "v", "V";
+  alpha_b "b", "B";
+  alpha_n "n", "N";
+  alpha_m "m", "M";
+  AB08 ",", "<";
+  AB09 ".", ">";
+  AB10 "/", "?";
+  AB11 "\\", "_";
+
+  space " ", " ", " ", " ";
+}
+
+key jp106_native_hiragana
+{
+  numeric_1 "ぬ", "";
+  numeric_2 "ふ", "";
+  numeric_3 "あ", "ぁ";
+  numeric_4 "う", "ぅ";
+  numeric_5 "え", "ぇ";
+  numeric_6 "お", "ぉ";
+  numeric_7 "や", "ゃ";
+  numeric_8 "ゆ", "ゅ";
+  numeric_9 "よ", "ょ";
+  numeric_0 "わ", "を";
+  AE11 "ほ", "";
+  AE12 "へ", "";
+  AE13 "ー", "";
+
+  alpha_q "た", "";
+  alpha_w "て", "";
+  alpha_e "い", "ぃ";
+  alpha_r "す", "";
+  alpha_t "か", "";
+  alpha_y "ん", "";
+  alpha_u "な", "";
+  alpha_i "に", "";
+  alpha_o "ら", "";
+  alpha_p "せ", "";
+  AD11 "゛", "";
+  AD12 "゜", "「";
+
+  alpha_a "ち", "";
+  alpha_s "と", "";
+  alpha_d "し", "";
+  alpha_f "は", "";
+  alpha_g "き", "";
+  alpha_h "く", "";
+  alpha_j "ま", "";
+  alpha_k "の", "";
+  alpha_l "り", "";
+  AC10 "れ", "";
+  AC11 "け", "";
+  BKSL "む", "」";
+
+  alpha_z "つ", "っ";
+  alpha_x "さ", "";
+  alpha_c "そ", "";
+  alpha_v "ひ", "";
+  alpha_b "こ", "";
+  alpha_n "み", "";
+  alpha_m "も", "";
+  AB08 "ね", "、";
+  AB09 "る", "。";
+  AB10 "め", "・";
+  KPDC "ろ", "";
+}
+
+key jp106_native_katakana
+{
+  numeric_1 "ヌ", "";
+  numeric_2 "フ", "";
+  numeric_3 "ア", "ァ";
+  numeric_4 "ウ", "ゥ";
+  numeric_5 "エ", "ェ";
+  numeric_6 "オ", "ォ";
+  numeric_7 "ヤ", "ャ";
+  numeric_8 "ユ", "ュ";
+  numeric_9 "ヨ", "ョ";
+  numeric_0 "ワ", "ヲ";
+  AE11 "ホ", "";
+  AE12 "ヘ", "";
+  AE13 "ー", "";
+
+  alpha_q "タ", "";
+  alpha_w "テ", "";
+  alpha_e "イ", "ィ";
+  alpha_r "ス", "";
+  alpha_t "カ", "";
+  alpha_y "ン", "";
+  alpha_u "ナ", "";
+  alpha_i "ニ", "";
+  alpha_o "ラ", "";
+  alpha_p "セ", "";
+  AD11 "゛", "";
+  AD12 "゜", "「";
+
+  alpha_a "チ", "";
+  alpha_s "ト", "";
+  alpha_d "シ", "";
+  alpha_f "ハ", "";
+  alpha_g "キ", "";
+  alpha_h "ク", "";
+  alpha_j "マ", "";
+  alpha_k "ノ", "";
+  alpha_l "リ", "";
+  AC10 "レ", "";
+  AC11 "ケ", "";
+  BKSL "ム", "」";
+
+  alpha_z "ツ", "ッ";
+  alpha_x "サ", "";
+  alpha_c "ソ", "";
+  alpha_v "ヒ", "";
+  alpha_b "コ", "";
+  alpha_n "ミ", "";
+  alpha_m "モ", "";
+  AB08 "ネ", "、";
+  AB09 "ル", "。";
+  AB10 "メ", "・";
+  KPDC "ロ", "";
+}
+
+seq romaji_to_hiragana
+{
+  # First, all the hiragana
+  alpha_a                 string("あ");
+  alpha_i                 string("い");
+  alpha_u                 string("う");
+  alpha_e                 string("え");
+  alpha_o                 string("お");
+  alpha_k alpha_a         string("か");
+  alpha_k alpha_i         string("き");
+  alpha_k alpha_u         string("く");
+  alpha_k alpha_e         string("け");
+  alpha_k alpha_o         string("こ");
+  alpha_s alpha_a         string("さ");
+  alpha_s alpha_h alpha_i string("し");
+  alpha_s alpha_u         string("す");
+  alpha_s alpha_e         string("せ");
+  alpha_s alpha_o         string("そ");
+  alpha_t alpha_a         string("た");
+  alpha_c alpha_h alpha_i string("ち");
+  alpha_t alpha_s alpha_u string("つ");
+  alpha_t alpha_e         string("て");
+  alpha_t alpha_o         string("と");
+  alpha_n alpha_a         string("な");
+  alpha_n alpha_i         string("に");
+  alpha_n alpha_u         string("ぬ");
+  alpha_n alpha_e         string("ね");
+  alpha_n alpha_o         string("の");
+  alpha_h alpha_a         string("は");
+  alpha_h alpha_i         string("ひ");
+  alpha_f alpha_u         string("ふ");
+  alpha_h alpha_e         string("へ");
+  alpha_h alpha_o         string("ほ");
+  alpha_m alpha_a         string("ま");
+  alpha_m alpha_i         string("み");
+  alpha_m alpha_u         string("む");
+  alpha_m alpha_e         string("め");
+  alpha_m alpha_o         string("に");
+  alpha_y alpha_a         string("や");
+  # There is no yi kana
+  alpha_y alpha_u         string("ゆ");
+  # There is no ye kana
+  alpha_y alpha_o         string("よ");
+  alpha_r alpha_a         string("ら");
+  alpha_r alpha_i         string("り");
+  alpha_r alpha_u         string("る");
+  alpha_r alpha_e         string("れ");
+  alpha_r alpha_o         string("ろ");
+  alpha_w alpha_a         string("わ");
+  # There is no wi kana
+  # There is no wu kana
+  # There is no we kana
+  alpha_w alpha_o         string("を");
+  alpha_n                 string("ん");
+
+  # Voiced hiragana
+  alpha_g alpha_a         string("が");
+  alpha_g alpha_i         string("ぎ");
+  alpha_g alpha_u         string("ぐ");
+  alpha_g alpha_e         string("げ");
+  alpha_g alpha_o         string("ご");
+  alpha_z alpha_a         string("ざ");
+  alpha_j alpha_i         string("じ");
+  alpha_z alpha_u         string("ず");
+  alpha_z alpha_e         string("ぜ");
+  alpha_z alpha_o         string("ぞ");
+  alpha_d alpha_a         string("だ");
+  # Voiced-ti is ji, which conflicts with voiced-shi
+  # Voiced-tsu is zu, which conflicts with voiced-su
+  alpha_d alpha_e         string("で");
+  alpha_d alpha_o         string("ど");
+  alpha_b alpha_a         string("ば");
+  alpha_b alpha_i         string("ぼ");
+  alpha_b alpha_u         string("ぶ");
+  alpha_b alpha_e         string("べ");
+  alpha_b alpha_o         string("ぼ");
+
+  # Plosive hiragana
+  alpha_p alpha_a         string("ぱ");
+  alpha_p alpha_i         string("ぴ");
+  alpha_p alpha_u         string("ぷ");
+  alpha_p alpha_e         string("ぺ");
+  alpha_p alpha_o         string("ぽ");
+
+  # Composites with ya/yu/yo
+  alpha_k alpha_y alpha_a string("きゃ");
+  alpha_k alpha_y alpha_u string("きゅ");
+  alpha_k alpha_y alpha_o string("きょ");
+  alpha_g alpha_y alpha_a string("ぎゃ");
+  alpha_g alpha_y alpha_u string("ぎゅ");
+  alpha_g alpha_y alpha_o string("ぎょ");
+  alpha_s alpha_y alpha_a string("しゃ");
+  alpha_s alpha_y alpha_u string("しゅ");
+  alpha_s alpha_y alpha_o string("しょ");
+  alpha_j alpha_y alpha_a string("じゃ");
+  alpha_j alpha_y alpha_u string("じゅ");
+  alpha_j alpha_y alpha_o string("じょ");
+  alpha_c alpha_h alpha_a string("ちゃ");
+  alpha_c alpha_h alpha_u string("ちゅ");
+  alpha_c alpha_h alpha_o string("ちょ");
+  alpha_n alpha_y alpha_a string("にゃ");
+  alpha_n alpha_y alpha_u string("にゅ");
+  alpha_n alpha_y alpha_o string("にょ");
+  alpha_h alpha_y alpha_a string("ひゃ");
+  alpha_h alpha_y alpha_u string("ひゅ");
+  alpha_h alpha_y alpha_o string("ひょ");
+  alpha_b alpha_y alpha_a string("びゃ");
+  alpha_b alpha_y alpha_u string("びゅ");
+  alpha_b alpha_y alpha_o string("びょ");
+  alpha_p alpha_y alpha_a string("ぴゃ");
+  alpha_p alpha_y alpha_u string("ぴゅ");
+  alpha_p alpha_y alpha_o string("ぴょ");
+  alpha_m alpha_y alpha_a string("みゃ");
+  alpha_m alpha_y alpha_u string("みゅ");
+  alpha_m alpha_y alpha_o string("みょ");
+  alpha_r alpha_y alpha_a string("りゃ");
+  alpha_r alpha_y alpha_u string("りゅ");
+  alpha_r alpha_y alpha_o string("りょ");
+
+  # Composites with double consonants
+  alpha_k alpha_k alpha_a string("っか");
+  alpha_k alpha_k alpha_i string("っき");
+  alpha_k alpha_k alpha_u string("っく");
+  alpha_k alpha_k alpha_e string("っけ");
+  alpha_k alpha_k alpha_o string("っこ");
+  alpha_s alpha_s alpha_a string("っさ");
+  alpha_s alpha_s alpha_h alpha_i string("っし");
+  alpha_s alpha_s alpha_u string("っす");
+  alpha_s alpha_s alpha_e string("っせ");
+  alpha_s alpha_s alpha_o string("っそ");
+  alpha_t alpha_t alpha_a string("った");
+  alpha_c alpha_c alpha_h alpha_i string("っち");
+  alpha_t alpha_t alpha_s alpha_u string("っつ");
+  alpha_t alpha_t alpha_e string("って");
+  alpha_t alpha_t alpha_o string("っと");
+  alpha_p alpha_p alpha_a string("っぱ");
+  alpha_p alpha_p alpha_i string("っぴ");
+  alpha_p alpha_p alpha_u string("っぷ");
+  alpha_p alpha_p alpha_e string("っぺ");
+  alpha_p alpha_p alpha_o string("っぽ");
+}
+
+abstract keymap jp106_romaji_to_hiragana
+{
+  include seq romaji_to_hiragana;
+}
+
+seq romaji_to_katakana
+{
+  # First, all the katakana
+  alpha_a                 string("ア");
+  alpha_i                 string("イ");
+  alpha_u                 string("ウ");
+  alpha_e                 string("エ");
+  alpha_o                 string("オ");
+  alpha_k alpha_a         string("カ");
+  alpha_k alpha_i         string("キ");
+  alpha_k alpha_u         string("ク");
+  alpha_k alpha_e         string("ケ");
+  alpha_k alpha_o         string("コ");
+  alpha_s alpha_a         string("サ");
+  alpha_s alpha_h alpha_i string("シ");
+  alpha_s alpha_u         string("ス");
+  alpha_s alpha_e         string("セ");
+  alpha_s alpha_o         string("ソ");
+  alpha_t alpha_a         string("タ");
+  alpha_c alpha_h alpha_i string("チ");
+  alpha_t alpha_s alpha_u string("ツ");
+  alpha_t alpha_e         string("テ");
+  alpha_t alpha_o         string("ト");
+  alpha_n alpha_a         string("ナ");
+  alpha_n alpha_i         string("ニ");
+  alpha_n alpha_u         string("ヌ");
+  alpha_n alpha_e         string("ネ");
+  alpha_n alpha_o         string("ノ");
+  alpha_h alpha_a         string("ハ");
+  alpha_h alpha_i         string("ヒ");
+  alpha_f alpha_u         string("フ");
+  alpha_h alpha_e         string("ヘ");
+  alpha_h alpha_o         string("ホ");
+  alpha_m alpha_a         string("マ");
+  alpha_m alpha_i         string("ミ");
+  alpha_m alpha_u         string("ム");
+  alpha_m alpha_e         string("メ");
+  alpha_m alpha_o         string("ニ");
+  alpha_y alpha_a         string("ヤ");
+  # There is no yi kana
+  alpha_y alpha_u         string("ユ");
+  # There is no ye kana
+  alpha_y alpha_o         string("ヨ");
+  alpha_r alpha_a         string("ラ");
+  alpha_r alpha_i         string("リ");
+  alpha_r alpha_u         string("ル");
+  alpha_r alpha_e         string("レ");
+  alpha_r alpha_o         string("ロ");
+  alpha_w alpha_a         string("ワ");
+  # There is no wi kana
+  # There is no wu kana
+  # There is no we kana
+  alpha_w alpha_o         string("ヲ");
+  alpha_n                 string("ン");
+
+  # Voiced katakana
+  alpha_g alpha_a         string("ガ");
+  alpha_g alpha_i         string("ギ");
+  alpha_g alpha_u         string("グ");
+  alpha_g alpha_e         string("ゲ");
+  alpha_g alpha_o         string("ゴ");
+  alpha_z alpha_a         string("ザ");
+  alpha_j alpha_i         string("ジ");
+  alpha_z alpha_u         string("ズ");
+  alpha_z alpha_e         string("ゼ");
+  alpha_z alpha_o         string("ゾ");
+  alpha_d alpha_a         string("ダ");
+  # Voiced-ti is ji, which conflicts with voiced-shi
+  # Voiced-tsu is zu, which conflicts with voiced-su
+  alpha_d alpha_e         string("デ");
+  alpha_d alpha_o         string("ド");
+  alpha_b alpha_a         string("バ");
+  alpha_b alpha_i         string("ボ");
+  alpha_b alpha_u         string("ブ");
+  alpha_b alpha_e         string("ベ");
+  alpha_b alpha_o         string("ボ");
+
+  # Plosive katakana
+  alpha_p alpha_a         string("パ");
+  alpha_p alpha_i         string("ピ");
+  alpha_p alpha_u         string("プ");
+  alpha_p alpha_e         string("ペ");
+  alpha_p alpha_o         string("ポ");
+
+  # Composites with ya/yu/yo
+  alpha_k alpha_y alpha_a string("キャ");
+  alpha_k alpha_y alpha_u string("キュ");
+  alpha_k alpha_y alpha_o string("キョ");
+  alpha_g alpha_y alpha_a string("ギャ");
+  alpha_g alpha_y alpha_u string("ギュ");
+  alpha_g alpha_y alpha_o string("ギョ");
+  alpha_s alpha_y alpha_a string("シャ");
+  alpha_s alpha_y alpha_u string("シュ");
+  alpha_s alpha_y alpha_o string("ショ");
+  alpha_j alpha_y alpha_a string("ジャ");
+  alpha_j alpha_y alpha_u string("ジュ");
+  alpha_j alpha_y alpha_o string("ジョ");
+  alpha_c alpha_h alpha_a string("チャ");
+  alpha_c alpha_h alpha_u string("チュ");
+  alpha_c alpha_h alpha_o string("チョ");
+  alpha_n alpha_y alpha_a string("ニャ");
+  alpha_n alpha_y alpha_u string("ニュ");
+  alpha_n alpha_y alpha_o string("ニョ");
+  alpha_h alpha_y alpha_a string("ヒャ");
+  alpha_h alpha_y alpha_u string("ヒュ");
+  alpha_h alpha_y alpha_o string("ヒョ");
+  alpha_b alpha_y alpha_a string("ビャ");
+  alpha_b alpha_y alpha_u string("ビュ");
+  alpha_b alpha_y alpha_o string("ビョ");
+  alpha_p alpha_y alpha_a string("ピャ");
+  alpha_p alpha_y alpha_u string("ピュ");
+  alpha_p alpha_y alpha_o string("ピョ");
+  alpha_m alpha_y alpha_a string("ミャ");
+  alpha_m alpha_y alpha_u string("ミュ");
+  alpha_m alpha_y alpha_o string("ミョ");
+  alpha_r alpha_y alpha_a string("リャ");
+  alpha_r alpha_y alpha_u string("リュ");
+  alpha_r alpha_y alpha_o string("リョ");
+
+  # Composites with double consonants
+  alpha_k alpha_k alpha_a string("ッカ");
+  alpha_k alpha_k alpha_i string("ッキ");
+  alpha_k alpha_k alpha_u string("ック");
+  alpha_k alpha_k alpha_e string("ッケ");
+  alpha_k alpha_k alpha_o string("ッコ");
+  alpha_s alpha_s alpha_a string("ッサ");
+  alpha_s alpha_s alpha_h alpha_i string("ッシ");
+  alpha_s alpha_s alpha_u string("ッス");
+  alpha_s alpha_s alpha_e string("ッセ");
+  alpha_s alpha_s alpha_o string("ッソ");
+  alpha_t alpha_t alpha_a string("ッタ");
+  alpha_c alpha_c alpha_h alpha_i string("ッチ");
+  alpha_t alpha_t alpha_s alpha_u string("ッツ");
+  alpha_t alpha_t alpha_e string("ッテ");
+  alpha_t alpha_t alpha_o string("ット");
+  alpha_p alpha_p alpha_a string("ッパ");
+  alpha_p alpha_p alpha_i string("ッピ");
+  alpha_p alpha_p alpha_u string("ップ");
+  alpha_p alpha_p alpha_e string("ッペ");
+  alpha_p alpha_p alpha_o string("ッポ");
+}
+
+abstract keymap jp106_romaji_to_katakana
+{
+  include seq romaji_to_katakana;
+}
+
+keymap jp106
+{
+  include keymap basic;
+  include keycode qwerty;
+  include keycode jp106;
+  include seq pc105;
+
+  option romaji_conversion
+  {
+    default keymap off
+    {
+      option kana_mode
+      {
+        default keymap alphanumeric
+        {
+          option rc_off_alphanumeric_width
+          {
+            default keymap hankaku
+            {
+              include key jp106_hankaku_alphanumeric;
+              seq hankaku_zenkaku setOption(rc_off_alphanumeric_width, zenkaku) setOption(rc_on_alphanumeric_width, zenkaku);
+            }
+            keymap zenkaku
+            {
+              include key jp106_zenkaku_alphanumeric;
+              seq hankaku_zenkaku setOption(rc_off_alphanumeric_width, hankaku) setOption(rc_on_alphanumeric_width, hankaku);
+            }
+          }
+        }
+        keymap hiragana
+        {
+          include key jp106_native_hiragana;
+        }
+        keymap katakana
+        {
+          include key jp106_native_katakana;
+        }
+      }
+      seq romaji setOption(romaji_conversion, on);
+    }
+    keymap on
+    {
+      option conversion_kana_mode
+      {
+        default keymap alphanumeric
+        {
+          option rc_on_alphanumeric_width
+          {
+            default keymap hankaku
+            {
+              include key jp106_hankaku_alphanumeric;
+              seq hankaku_zenkaku setOption(rc_off_alphanumeric_width, zenkaku) setOption(rc_on_alphanumeric_width, zenkaku);
+            }
+            keymap zenkaku
+            {
+              include key jp106_zenkaku_alphanumeric;
+              seq hankaku_zenkaku setOption(rc_off_alphanumeric_width, hankaku) setOption(rc_on_alphanumeric_width, hankaku);
+            }
+          }
+        }
+        keymap hiragana
+        {
+          include keymap jp106_romaji_to_hiragana;
+        }
+        keymap katakana
+        {
+          include keymap jp106_romaji_to_katakana;
+        }
+      }
+      seq romaji setOption(romaji_conversion, off);
+    }
+  }
+
+  seq eisu_toggle setOption(kana_mode, alphanumeric) setOption(conversion_kana_mode, alphanumeric);
+  seq hiragana setOption(kana_mode, hiragana) setOption(conversion_kana_mode, hiragana);
+  seq katakana setOption(kana_mode, katakana) setOption(conversion_kana_mode, katakana);
+  seq henkan event("key:henkan");
+  seq muhenkan event("key:muhenkan");
+  seq zenkouho event("key:zenkouho");
+}
