@@ -1,0 +1,590 @@
+# Took this list from Debian xfree86 4.3.0.dfsg.1-1
+# /etc/X11/xkb/keycodes/xfree86
+
+keycode basic_X11
+{
+  TLDE = 49;
+  AE01 = 10;
+  AE02 = 11;
+  AE03 = 12;
+  AE04 = 13;
+  AE05 = 14;
+  AE06 = 15;
+  AE07 = 16;
+  AE08 = 17;
+  AE09 = 18;
+  AE10 = 19;
+  AE11 = 20;
+  AE12 = 21;
+  backspace = 22;
+
+  BKSL = 51;
+  LSGT = 94;
+
+  tab = 23;
+  AD01 = 24;
+  AD02 = 25;
+  AD03 = 26;
+  AD04 = 27;
+  AD05 = 28;
+  AD06 = 29;
+  AD07 = 30;
+  AD08 = 31;
+  AD09 = 32;
+  AD10 = 33;
+  AD11 = 34;
+  AD12 = 35;
+  return = 36;
+
+  caps_lock = 66;
+  AC01 = 38;
+  AC02 = 39;
+  AC03 = 40;
+  AC04 = 41;
+  AC05 = 42;
+  AC06 = 43;
+  AC07 = 44;
+  AC08 = 45;
+  AC09 = 46;
+  AC10 = 47;
+  AC11 = 48;
+
+  left_shift = 50;
+  AB01 = 52;
+  AB02 = 53;
+  AB03 = 54;
+  AB04 = 55;
+  AB05 = 56;
+  AB06 = 57;
+  AB07 = 58;
+  AB08 = 59;
+  AB09 = 60;
+  AB10 = 61;
+  right_shift = 62;
+
+  left_alt = 64;
+  left_ctrl = 37;
+  space = 65;
+  right_ctrl = 109;
+  right_alt = 113;
+  alt_gr = right_alt;
+  left_windows = 115;
+  right_windows = 116;
+  menu = 117;
+
+  escape = 9;
+  FK01 = 67;
+  FK02 = 68;
+  FK03 = 69;
+  FK04 = 70;
+  FK05 = 71;
+  FK06 = 72;
+  FK07 = 73;
+  FK08 = 74;
+  FK09 = 75;
+  FK10 = 76;
+  FK11 = 95;
+  FK12 = 96;
+
+  print_screen = 111;
+  sysrq = 92;
+  scroll_lock = 78;
+  pause = 110;
+  break = 114;
+
+  insert = 106;
+  home = 97;
+  page_up = 99;
+  delete = 107;
+  end = 103;
+  page_down = 105;
+
+  up  =  98;
+  left = 100;
+  down = 104;
+  right = 102;
+
+  numlock = 77;
+  keypad_divide = 112;
+  keypad_multiply = 63;
+  keypad_subtract = 82;
+
+  keypad_7 = 79;
+  keyapd_8 = 80;
+  keypad_9 = 81;
+  keypad_add = 86;
+
+  keypad_4 = 83;
+  keypad_5 = 84;
+  keypad_6 = 85;
+
+  keypad_1 = 87;
+  keypad_2 = 88;
+  keypad_3 = 89;
+  keypad_enter = 108;
+
+  keypad_0 = 90;
+  keypad_delete = 91;
+
+  FK13 = 118;
+  FK14 = 119;
+  FK15 = 120;
+  FK16 = 121;
+  FK17 = 122;
+  KPDC = 123;
+
+  # Keys that are generated on Japanese keyboards
+
+  # Hankaku_Zenkaku toggle
+  hankaku_zenkaku = TLDE;
+  # Hiragana_Katakana toggle
+  hiragana_katakana = FK15;
+  # backslash/underscore
+  AB11 = KPDC;
+  # Henkan
+  XFER = 129;
+  # Muhenkan
+  NFER = 131;
+  # Yen
+  AE13 = 133;
+
+  # Keys that are generated on Japanese keyboards and the
+  # ABNT2 Brazillian keyboards
+  AC12 = BKSL;
+
+  # Extended keys that may be generated on "Internet" keyboards.
+  # These are not standardised, hence the meaningless names.
+  # The entries commented out are never generated because the raw codes
+  # in those positions are already used for well-defined keys.
+
+  # Also XFER
+  I01 = 129;
+  I02 = 130;
+  # Also NFER
+  I03 = 131;
+  I04 = 132;
+  # Also AE13
+  I05 = 133;
+  I06 = 134;
+  I07 = 135;
+  I08 = 136;
+  I09 = 137;
+  I0A = 138;
+  I0B = 139;
+  I0C = 140;
+  I0D = 141;
+  I0E = 142;
+  I0F = 143;
+  I10 = 144;
+  I11 = 145;
+  I12 = 146;
+  I13 = 147;
+  I14 = 148;
+  I15 = 149;
+  I16 = 150;
+  I17 = 151;
+  I18 = 152;
+  I19 = 153;
+  I1A = 154;
+  I1B = 155;
+  # I1C = 156;
+  # I1D = 157;
+  I1E = 158;
+  I1F = 159;
+  I20 = 160;
+  I21 = 161;
+  I22 = 162;
+  I23 = 163;
+  I24 = 164;
+  I25 = 165;
+  I26 = 166;
+  I27 = 167;
+  I28 = 168;
+  I29 = 169;
+  # I2A = 170;
+  I2B = 171;
+  I2C = 172;
+  I2D = 173;
+  I2E = 174;
+  I2F = 175;
+  I30 = 176;
+  I31 = 177;
+  I32 = 178;
+  I33 = 179;
+  I34 = 180;
+  # I35 = 181;
+  # I36 = 182;
+  # I37 = 183;
+  # I38 = 184;
+  I39 = 185;
+  I3A = 186;
+  I3B = 187;
+  I3C = 188;
+  # I3D = 189;
+  # I3E = 190;
+  # I3F = 191;
+  # I40 = 192;
+  # I41 = 193;
+  I42 = 194;
+  I43 = 195;
+  I44 = 196;
+  I45 = 197;
+  # I46 = 198;
+  # I47 = 199;
+  # I48 = 200;
+  # I49 = 201;
+  I4A = 202;
+  # I4B = 203;
+  # I4C = 204;
+  # I4D = 205;
+  # I4E = 206;
+  # I4F = 207;
+  # I50 = 208;
+  # I51 = 209;
+  # I52 = 210;
+  # I53 = 211;
+  I54 = 212;
+  I55 = 213;
+  I56 = 214;
+  I57 = 215;
+  I58 = 216;
+  I59 = 217;
+  I5A = 218;
+  # I5B = 219;
+  # I5C = 220;
+  # I5D = 221;
+  I5E = 222;
+  I5F = 223;
+  I60 = 224;
+  I61 = 225;
+  I62 = 226;
+  I63 = 227;
+  I64 = 228;
+  I65 = 229;
+  I66 = 230;
+  I67 = 231;
+  I68 = 232;
+  I69 = 233;
+  I6A = 234;
+  I6B = 235;
+  I6C = 236;
+  I6D = 237;
+  I6E = 238;
+  I6F = 239;
+  I70 = 240;
+  I71 = 241;
+  I72 = 242;
+  I73 = 243;
+  I74 = 244;
+  I75 = 245;
+  I76 = 246;
+  I77 = 247;
+  I78 = 248;
+  I79 = 249;
+  I7A = 250;
+  I7B = 251;
+  I7C = 252;
+  I7D = 253;
+  I7E = 254;
+  I7F = 255;
+}
+
+# This one was extracted from some copy of linux/input.h
+
+keycode basic_EVDEV
+{
+  TLDE = 41;
+  AE01 = 2;
+  AE02 = 3;
+  AE03 = 4;
+  AE04 = 5;
+  AE05 = 6;
+  AE06 = 7;
+  AE07 = 8;
+  AE08 = 9;
+  AE09 = 10;
+  AE10 = 11;
+  AE11 = 12;
+  AE12 = 13;
+  backspace = 14;
+
+  BKSL = 43;
+  LSGT = 86;
+
+  tab = 15;
+  AD01 = 16;
+  AD02 = 17;
+  AD03 = 18;
+  AD04 = 19;
+  AD05 = 20;
+  AD06 = 21;
+  AD07 = 22;
+  AD08 = 23;
+  AD09 = 24;
+  AD10 = 25;
+  AD11 = 26;
+  AD12 = 27;
+  return = 28;
+
+  caps_lock = 58;
+  AC01 = 30;
+  AC02 = 31;
+  AC03 = 32;
+  AC04 = 33;
+  AC05 = 34;
+  AC06 = 35;
+  AC07 = 36;
+  AC08 = 37;
+  AC09 = 38;
+  AC10 = 39;
+  AC11 = 40;
+
+  left_shift = 42;
+  AB01 = 44;
+  AB02 = 45;
+  AB03 = 46;
+  AB04 = 47;
+  AB05 = 48;
+  AB06 = 49;
+  AB07 = 50;
+  AB08 = 51;
+  AB09 = 52;
+  AB10 = 53;
+  right_shift = 54;
+
+  left_alt = 56;
+  left_ctrl = 29;
+  space = 57;
+  right_ctrl = 97;
+  right_alt = 100;
+  alt_gr = right_alt;
+  left_windows = 125;
+  right_windows = 126;
+  menu = 127;
+
+  escape = 1;
+  FK01 = 59;
+  FK02 = 60;
+  FK03 = 61;
+  FK04 = 62;
+  FK05 = 63;
+  FK06 = 64;
+  FK07 = 65;
+  FK08 = 66;
+  FK09 = 67;
+  FK10 = 68;
+  FK11 = 87;
+  FK12 = 88;
+
+  sysrq = 99;
+  print_screen = sysrq;
+  scroll_lock = 70;
+  pause = 119;
+  break = pause;
+
+  insert = 110;
+  home = 102;
+  page_up = 104;
+  delete = 111;
+  end = 107;
+  page_down = 109;
+
+  up  =  103;
+  left = 105;
+  down = 108;
+  right = 106;
+
+  numlock = 69;
+  keypad_divide = 98;
+  keypad_multiply = 55;
+  keypad_subtract = 74;
+
+  keypad_7 = 71;
+  keyapd_8 = 72;
+  keypad_9 = 73;
+  keypad_add = 78;
+
+  keypad_4 = 75;
+  keypad_5 = 76;
+  keypad_6 = 77;
+
+  keypad_1 = 79;
+  keypad_2 = 80;
+  keypad_3 = 81;
+  keypad_enter = 96;
+
+  keypad_0 = 82;
+  keypad_delete = 83;
+
+  FK13 = 183;
+  FK14 = 184;
+  FK15 = 185;
+  FK16 = 186;
+  FK17 = 187;
+#  KPDC = 123;
+
+  # Keys that are generated on Japanese keyboards
+
+  # Hankaku_Zenkaku toggle
+  hankaku_zenkaku = 85;
+  # Hiragana_Katakana toggle
+  hiragana_katakana = 93;
+  # backslash/underscore
+#  AB11 = KPDC;
+  # Henkan
+  XFER = 92;
+  # Muhenkan
+  NFER = 94;
+  # Yen
+  AE13 = 124;
+
+  # Keys that are generated on Japanese keyboards and the
+  # ABNT2 Brazillian keyboards
+  AC12 = BKSL;
+}
+
+keycode name basic
+{
+  backspace[*] = "backspace";
+  tab[*] = "tab";
+  return[*] = "return";
+
+  caps_lock[*] = "caps_lock";
+  left_shift[*] = "left_shift";
+  right_shift[*] = "right_shift";
+  left_alt[*] = "left_alt";
+  left_ctrl[*] = "left_ctrl";
+  space[*] = "space";
+  right_ctrl[*] = "right_ctrl";
+  right_alt[*] = "right_alt";
+  left_windows[*] = "left_win";
+  right_windows[*] = "right_win";
+
+  menu[*] = "menu";
+  escape[*] = "escape";
+
+  FK01[*] = "F1";
+  FK02[*] = "F2";
+  FK03[*] = "F3";
+  FK04[*] = "F4";
+  FK05[*] = "F5";
+  FK06[*] = "F6";
+  FK07[*] = "F7";
+  FK08[*] = "F8";
+  FK09[*] = "F9";
+  FK10[*] = "F10";
+  FK11[*] = "F11";
+  FK12[*] = "F12";
+  FK13[*] = "F13";
+  FK14[*] = "F14";
+  FK15[*] = "F15";
+  FK16[*] = "F16";
+  FK17[*] = "F17";
+
+  print_screen[*] = "print_screen";
+  sysrq[*] = "sysrq";
+  scroll_lock[*] = "scroll_lock";
+  pause[*] = "pause";
+  break[*] = "break";
+
+  insert[*] = "insert";
+  home[*] = "home";
+  page_up[*] = "page_up";
+  delete[*] = "delete";
+  end[*] = "end";
+  page_down[*] = "page_down";
+
+  up[*] = "up";
+  left[*] = "left";
+  down[*] = "down";
+  right[*] = "right";
+
+  numlock[*] = "numlock";
+  keypad_divide[*] = "keypad_divide";
+  keypad_multiply[*] = "keypad_multiply";
+  keypad_subtract[*] = "keypad_subtract";
+
+  keypad_7[*] = "keypad_7";
+  keyapd_8[*] = "keypad_8";
+  keypad_9[*] = "keypad_9";
+  keypad_add[*] = "keypad_add";
+
+  keypad_4[*] = "keypad_4";
+  keypad_5[*] = "keypad_5";
+  keypad_6[*] = "keypad_6";
+
+  keypad_1[*] = "keypad_1";
+  keypad_2[*] = "keypad_2";
+  keypad_3[*] = "keypad_3";
+  keypad_enter[*] = "keypad_enter";
+
+  keypad_0[*] = "keypad_0";
+  keypad_delete[*] = "keypad_delete";
+}
+
+modifier basic
+{
+  shift = 0;
+  ctrl = 1;
+  alt = 2;
+  meta = 3;
+  super = 4;
+  hyper = 5;
+  # X calls this Mode_switch
+  altgr = 6;
+}
+
+modifier name basic
+{
+  ctrl = "C";
+  alt = "A";
+  meta = "M";
+  super = "S";
+  hyper = "H";
+  altgr = "Ag";
+}
+
+seq basic_modifiers
+{
+  left_shift[*] setModifiers(shift) restoreState();
+  ^left_shift[*] maskModifiers(!shift) restoreState();
+  right_shift[*] setModifiers(shift) restoreState();
+  ^right_shift[*] maskModifiers(!shift) restoreState();
+
+  caps_lock[/shift] setStickyModifiers(shift);
+  caps_lock[shift] maskStickyModifiers(!shift);
+
+  left_ctrl[*] setModifiers(ctrl) restoreState();
+  ^left_ctrl[*] maskModifiers(!ctrl) restoreState();
+  right_ctrl[*] setModifiers(ctrl) restoreState();
+  ^right_ctrl[*] maskModifiers(!ctrl) restoreState();
+
+  left_alt[*] setModifiers(meta) restoreState();
+  ^left_alt[*] maskModifiers(!meta) restoreState();
+  alt_gr[*] setModifiers(altgr) restoreState();
+  ^alt_gr[*] maskModifiers(!altgr) restoreState();
+
+  left_windows[*] setModifiers(super) restoreState();
+  ^left_windows[*] maskModifiers(!super) restoreState();
+  right_windows[*] setModifiers(super) restoreState();
+  ^right_windows[*] maskModifiers(!super) restoreState();
+}
+
+abstract keymap basic
+{
+  option DEVICE
+  {
+    default keymap X11
+    {
+      include keycode basic_X11;
+    }
+    keymap EVDEV
+    {
+      include keycode basic_EVDEV;
+    }
+  }
+  include keycode name basic;
+  include modifier basic;
+  include modifier name basic;
+  include seq basic_modifiers;
+}

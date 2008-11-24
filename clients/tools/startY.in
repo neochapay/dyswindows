@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -e
+
+if test x$1 = x-trace ; then
+YPROG=traceY
+shift
+else
+YPROG=Y
+fi
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+sysconfdir=@sysconfdir@
+bindir=@bindir@
+
+yconfigfile=${YCONFIGFILE:-${sysconfdir}/Y/default.conf}
+
+# Y detaches. This will return once it is up and running:
+YPID=`${bindir}/${YPROG} --emit-pid`
+
+export YDISPLAY="unix:/tmp/.Y-unix/$YPID"
+
+if [ -x $HOME/.ysession ]
+then
+   exec $HOME/.ysession
+else
+   exec ${bindir}/yiterm
+fi

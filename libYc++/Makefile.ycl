@@ -1,0 +1,16 @@
+# Hey, emacs! This is near enough to a -*- makefile -*- as makes no odds
+# This is a list of classes to generate support for
+Canvas
+Console
+GridLayout
+Label
+Window
+YButton
+YBin
+YContainer
+YToggleButton
+YCheckbox
+YRadioButton
+YRadioGroup
+YRowLayout
+# arch-tag: 28ce4f79-c85c-472d-8387-397393af4ffd

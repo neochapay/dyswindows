@@ -1,0 +1,123 @@
+#!/usr/bin/perl
+
+# Y class preprocessor
+
+# This generates some infrastructure code from the class definitions
+# in the source
+
+use 5.6.0;
+use strict;
+use warnings;
+
+use lib '@pkgdatadir@/yclpp';
+BEGIN {unshift @INC, (split /:/, $ENV{yclpp_libdir}) if exists $ENV{yclpp_libdir};}
+
+use Cwd;
+use Data::Dumper;
+use IO::File;
+use Getopt::Long qw/:config require_order pass_through/;
+use YCL::YCD;
+use YCL::Server::C;
+
+my $version = "0.1";
+
+sub usage
+  {
+    print <<END;
+yclpp -d <class> [OPTION] <source files> ...
+yclpp -s [OPTION] <class definition>
+yclpp -c <language> [OPTION] <class definition>
+
+Preprocesses Y class definitions
+
+Modes:
+ -d <class>, --defs <class>
+          Generate class definitions (ycd) from source for the given class
+ -c <language>, --client <language>
+          Generate client class support for the specified language
+ -s, --server
+          Generate server class support
+
+Options:
+ -h, --help
+          Show this message
+ -o <file>, --output <file>
+          Place the output into <file>
+ -v, --verbose
+          Be more verbose
+ --debug
+          Dump data to stdout that can aid in debugging yclpp
+END
+    exit 0;
+  }
+
+my $output;
+my $debug;
+my $verbose;
+my $wanted_class;
+my $server;
+my $client;
+GetOptions('help|h' => \&usage,
+           'output|o=s' => \$output,
+           'verbose|v' => \$verbose,
+           'debug' => \$debug,
+           'defs|d=s' => \$wanted_class,
+           'server|s' => \$server,
+           'client|c=s' => \$client,
+          );
+
+usage if 1 != scalar grep {$_} ($wanted_class, $server, $client);
+
+die "No source files given" unless scalar @ARGV;
+
+unless (defined $output)
+  {
+    $output = cwd;
+  }
+
+print "Generating output in '$output'\n" if $verbose;
+
+if ($wanted_class)
+  {
+    my @classes = YCL::Server::C::scan($wanted_class, $verbose, @ARGV);
+    die "Internal error: too many classes extracted" if 1 < scalar @classes;
+    if (scalar @classes == 0)
+      {
+        print STDERR "Nothing to do.\n";
+        exit 0;
+      }
+
+    $classes[0]->output($output) or exit 1;
+  }
+elsif ($server)
+  {
+    usage if scalar @ARGV > 1;
+    my $class = load YCL::YCD shift;
+    exit 1 unless $class;
+    YCL::Server::C->output($class, $output);
+  }
+elsif ($client)
+  {
+    my $client_class = "YCL::Client::" . ucfirst $client;
+    $client_class =~ s/\+/x/g;
+    eval "require $client_class";
+    if ($@)
+      {
+        my $err = $@;
+        $err =~ s/\n$//;
+        print STDERR "Couldn't find or load support for client language $client:\n";
+        print STDERR "$err\n";
+        exit 1;
+      }
+
+    usage if scalar @ARGV > 1;
+    my $class = load YCL::YCD shift;
+    exit 1 unless $class;
+    $client_class->output($class, $output);
+  }
+else
+  {
+    die "Not reached";
+  }
+
+# arch-tag: def78f8d-c288-4954-8359-0738e1cd641b
