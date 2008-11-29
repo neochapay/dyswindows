@@ -201,13 +201,12 @@ widget_get_state (const struct Widget *self)
 /*
  * Tests whether the widget contains the given point in buffer coordinates
  */
-bool
-widget_contains_point_buffer (const struct Widget *self, int32_t x, int32_t y)
+bool widget_contains_point_buffer (const struct Widget *self, int32_t x, int32_t y)
 {
   if (self == NULL)
     return false;
-  int w_x;
-  int w_y;
+  int w_x = 0;
+  int w_y = 0;
   bool ret_val = false;
   struct Rectangle *rect = widget_get_rectangle_buffer (self);
   if (w_x > rect -> x 
