@@ -30,9 +30,9 @@ static int title_height = 30;
 static double window_radius = 0.0;
 static double window_edge_width = 1.0;
 static double edge_offset = 0.0;
-static double edge_button_offset = 6.0;
+static double edge_button_offset = 10.0;
 
-static int button_size = 5; //buttons are square
+static int button_size = 10; //buttons are square
 static int button_right_edge = 20; //buttons end window_width - 20
 
 
@@ -143,47 +143,46 @@ paint_title_bar (struct Window *window, struct Painter *painter,
 		       w-(2*edge_offset),
 		       title_height-(2*edge_offset),
 		       window_radius);
-  cairo_set_source_rgba (cr, .5,.5, 1.0, .5);
+  cairo_set_source_rgba (cr, .8,.8,.8,1);
   cairo_fill_preserve (cr);
+/*
   if(selected)
-    cairo_set_source_rgba (cr, .5, 0, 0, 0.5);
+    cairo_set_source_rgba (cr, .1, .1, .1, 1);
   else
-    cairo_set_source_rgba (cr, .5, .5, .5, 0.5);
-
+    cairo_set_source_rgba (cr, .1, .1, .1, 0.2);
+*/
   cairo_stroke (cr);
 
   cairo_select_font_face (cr, "Serif", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_BOLD);
   cairo_set_font_size (cr, 12.0);
-  cairo_set_source_rgb (cr, 1.0, 1.0, 1.0);
+  cairo_set_source_rgb (cr, 0, 0, 0);
   cairo_move_to (cr, 20, title_height-10);
   cairo_show_text (cr, title);
 
   /* Paint the expand, close buttons */
   int buttonPosX = x + w - button_right_edge;
   int buttonPosY = (int)(y + (title_height/2)-(button_size/2));
-  //  Y_TRACE ("drawing close button at: %d,%d", buttonPosX, buttonPosY);
-  cairo_rectangle(cr,
-		  buttonPosX,
-		  buttonPosY,
-		  button_size,
-		  button_size);
-  cairo_set_line_width(cr, 1.0);
-  cairo_set_source_rgb(cr, 1.0, 1.0, 1.0); //red button
-  cairo_fill_preserve(cr);
-  cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
-  cairo_stroke(cr);
+
+// Create close button
+    cairo_move_to(cr,buttonPosX,buttonPosY);
+    cairo_line_to(cr,buttonPosX+10,buttonPosY+10);
+    cairo_move_to(cr,buttonPosX,buttonPosY+10);
+    cairo_line_to(cr,buttonPosX+10,buttonPosY);
+    cairo_set_line_width (cr, 2.0);
+    cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
+    cairo_stroke (cr);
 
   buttonPosX -= button_size+edge_button_offset;
   //  Y_TRACE ("drawing expand button at: %d,%d", buttonPosX, buttonPosY);
-  cairo_rectangle(cr,
-		  buttonPosX,
-		  buttonPosY,
-		  button_size,
-		  button_size);
-  cairo_set_source_rgb(cr, 0.0, 1.0, 0.0); //green button
-  cairo_fill_preserve(cr);
-  cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
-  cairo_stroke(cr);
+
+//Maximize Button
+    cairo_move_to(cr,buttonPosX+15,buttonPosY+5);
+    cairo_line_to(cr,buttonPosX+10,buttonPosY);
+    cairo_line_to(cr,buttonPosX+5,buttonPosY+5);
+    cairo_set_line_width (cr, 2.0);
+    cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
+    cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
+    cairo_stroke (cr);
 }
 
 void
@@ -197,7 +196,7 @@ default_window_paint (struct Window *window, struct Painter *painter)
   bool selected = (wmSelectedWindow () == window);
 
 
-  YColor bgcolor = createColor (1.0, 0.5, 0.0, 1.0);
+  YColor bgcolor = createColor (.8, 0.8, 0.8, 1.0);
   const struct Value *bgcolourProperty = objectGetProperty (window_to_object (window), "background");
   if (bgcolourProperty)
     bgcolor = createColorInt32 (bgcolourProperty->uint32);
