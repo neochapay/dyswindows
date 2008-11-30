@@ -37,7 +37,7 @@ Sample::Sample (Y::Connection *y_) : y(y_)
 
   window -> requestClose.connect (bind (sigc::ptr_fun (&exit), EXIT_SUCCESS));
 
-  samplelabel = new Y::Label (y, "The Y Window System");
+  samplelabel = new Y::Label (y, "The DyS Window system");
   samplelabel->setAlignment("center");
 
   samplebutton = new Y::YButton (y);
