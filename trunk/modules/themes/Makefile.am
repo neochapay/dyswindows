@@ -1,1 +1,1 @@
-SUBDIRS = default , eau
+SUBDIRS = default eau
