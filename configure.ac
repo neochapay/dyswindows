@@ -296,6 +296,7 @@ modules/drivers/input/Makefile
 modules/drivers/input/evdev/Makefile
 modules/themes/Makefile
 modules/themes/default/Makefile
+modules/themes/eau/Makefile
 modules/wm/Makefile
 modules/wm/default/Makefile
 clients/Makefile
