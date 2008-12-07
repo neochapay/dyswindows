@@ -140,9 +140,15 @@ sub output
     foreach my $super_headers (@{$ycd->supers})
     {
       my $hdr = lc $super_headers;
-      print $fh <<"END";
+      if($hdr =~ /widget|yradiogroup|object/){
+	print $fh <<"END";
+#include <Y/c++/${hdr}.h>
+END
+      } else {
+	print $fh <<"END";
 #include <Y/c++/objects/${hdr}.h>
 END
+      }
     }
 
 # Super classes..
