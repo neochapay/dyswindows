@@ -25,7 +25,7 @@ Approximate roadmap for version 0.3
     * Splitter
     * StatusBar
     * ToolBar
-    * Window
+    * ~~Window~~
 
  # *Create simple WM*
     * Add menu
