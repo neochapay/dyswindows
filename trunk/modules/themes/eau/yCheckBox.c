@@ -22,8 +22,8 @@ default_draw_ycheckbox(struct Painter *painter, struct YCheckbox *checkbox)
 
   painter_save_state (painter);
 
-  cairo_select_font_face (cr, "Serif", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_BOLD);
-  cairo_set_font_size (cr, 12.0);
+  cairo_select_font_face (cr, "Sans Serif", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_BOLD);
+  cairo_set_font_size (cr, 10.0);
   cairo_text_extents_t extents;
   cairo_text_extents (cr, text, &extents);
 
@@ -46,11 +46,12 @@ default_draw_ycheckbox(struct Painter *painter, struct YCheckbox *checkbox)
       int xp = 0;
       painter_translate_xy(painter, &xp, &yp);
       cairo_set_source_rgb(cr, 0,0,0);
-      cairo_move_to(cr,xp,yp);
-      cairo_line_to(cr,xp+16,yp+16);
-      cairo_stroke(cr);
-      cairo_move_to(cr,xp+16,yp);
-      cairo_line_to(cr,xp,yp+16);
+      cairo_move_to(cr,xp+3,yp+8);
+      cairo_line_to(cr,xp+8,yp+14);
+      cairo_line_to(cr,xp+13,yp+3);
+      cairo_set_line_width (cr, 2.0);
+      cairo_set_line_cap  (cr, CAIRO_LINE_CAP_ROUND);
+      cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
       cairo_stroke(cr);
     }
   

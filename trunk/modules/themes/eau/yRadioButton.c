@@ -25,8 +25,8 @@ default_draw_yradiobutton(struct Painter *painter, struct YRadioButton *radiobut
   default_draw_ybutton_pane (painter, 0, 0, rect->w, rect->h, state, 
 		  radiobutton->togglebutton.button.state);
 
-  cairo_select_font_face (cr, "Serif", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_BOLD);
-  cairo_set_font_size (cr, 12.0);
+  cairo_select_font_face (cr, "Sans Serif", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_BOLD);
+  cairo_set_font_size (cr, 10.0);
 
   cairo_text_extents_t extents;
   cairo_text_extents (cr, text, &extents);
