@@ -26,7 +26,7 @@ enum WindowRegion
 //these should be configurable,
 
 
-static int title_height = 30;
+static int title_height = 20;
 static double window_radius = 0.0;
 static double window_edge_width = 1.0;
 static double edge_offset = 0.0;
@@ -135,28 +135,28 @@ paint_title_bar (struct Window *window, struct Painter *painter,
 
   cairo_t *cr = painter->cairo_context;
 
-  //draw curved rectangle
-  cairo_set_line_width (cr, window_edge_width);
-  paint_curved_rectangle(cr,
-		       x+edge_offset,
-		       y+edge_offset,
-		       w-(2*edge_offset),
-		       title_height-(2*edge_offset),
-		       window_radius);
-  cairo_set_source_rgba (cr, .8,.8,.8,1);
+// background title color
+  cairo_set_source_rgb(cr, 0.8,0.8,0.8);
+// background title patch
+  cairo_move_to (cr,x,y);
+  cairo_line_to (cr,x,y+title_height);
+  cairo_line_to (cr,x+w,y+title_height);
+  cairo_line_to (cr,x+w,y);
+  cairo_close_path (cr);
   cairo_fill_preserve (cr);
-/*
-  if(selected)
-    cairo_set_source_rgba (cr, .1, .1, .1, 1);
-  else
-    cairo_set_source_rgba (cr, .1, .1, .1, 0.2);
-*/
+//line color
+  cairo_set_source_rgb (cr, 0.6, 0.6, 0.6);
+//line width
+  cairo_set_line_width(cr,3);
+  cairo_set_line_join (cr, CAIRO_LINE_JOIN_ROUND);
+  cairo_set_line_cap  (cr, CAIRO_LINE_CAP_ROUND);
+  
   cairo_stroke (cr);
 
-  cairo_select_font_face (cr, "Serif", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_BOLD);
-  cairo_set_font_size (cr, 12.0);
-  cairo_set_source_rgb (cr, 0, 0, 0);
-  cairo_move_to (cr, 20, title_height-10);
+  cairo_select_font_face (cr, "Sans Serif", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_BOLD);
+  cairo_set_font_size (cr, 10.0);
+  cairo_set_source_rgb (cr, 0.1, 0.1, 0.1);
+  cairo_move_to (cr, 20, title_height-6);
   cairo_show_text (cr, title);
 
   /* Paint the expand, close buttons */
@@ -195,31 +195,23 @@ default_window_paint (struct Window *window, struct Painter *painter)
   struct Widget *child = windowGetChild (window);
   bool selected = (wmSelectedWindow () == window);
 
-
-  YColor bgcolor = createColor (.8, 0.8, 0.8, 1.0);
+  YColor bgcolor = createColor(0.8,0.8,0.8,1);
   const struct Value *bgcolourProperty = objectGetProperty (window_to_object (window), "background");
   if (bgcolourProperty)
-    bgcolor = createColorInt32 (bgcolourProperty->uint32);
+  bgcolor = createColorInt32 (bgcolourProperty->uint32);
   clear_title_bar (cr, 0, 0, rect->w, title_height);
   clear_border (cr, 0, title_height, rect->w, rect->h - title_height);
 
-  //draw curved rectangle
-
-  cairo_set_line_width (cr, window_edge_width);
-  paint_curved_rectangle(cr,
-            0+edge_offset,
-            title_height + edge_offset,
-            rect->w-(2*edge_offset),
-            rect->h - title_height - (2*edge_offset),
-            window_radius);
-  cairo_set_source_rgb (cr, bgcolor.red, bgcolor.green, bgcolor.blue);
+  cairo_move_to (cr,0,0-title_height);
+  cairo_line_to (cr,rect->w,0-title_height);
+  cairo_line_to (cr,rect->w,rect->h);
+  cairo_line_to (cr,0,rect->h);
+  cairo_close_path (cr);
+  cairo_set_source_rgb(cr,0.8,0.8,0.8);
   cairo_fill_preserve (cr);
-
-  if(selected)
-    cairo_set_source_rgba (cr, .5, 0, 0, 0.5);
-  else
-    cairo_set_source_rgba (cr, .5, .5, .5, 0.5);
-
+  cairo_set_source_rgb (cr,0.6,0.6,0.6);
+  cairo_set_line_width (cr, 2.0);
+  
   cairo_stroke (cr);
 
   paint_title_bar (window, painter, 0, 0, rect -> w);
