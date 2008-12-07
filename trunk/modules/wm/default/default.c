@@ -126,8 +126,8 @@ defaultMaximiseWindow (struct WindowManager *wm, struct Window *win)
   widget_get_size (desktopToWidget (desktop), &w, &h);
   windowSaveGeometry (win);
   windowSetSizeState (win, WINDOW_SIZE_MAXIMISE);
-  widget_move (windowToWidget (win), x, y);
-  widget_resize (windowToWidget (win), w, h);
+  widget_move (windowToWidget (win), x-10, y);
+  widget_resize (windowToWidget (win), w, h-10);
 }
 
 static void

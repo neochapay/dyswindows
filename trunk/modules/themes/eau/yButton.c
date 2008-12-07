@@ -18,19 +18,29 @@ default_draw_ybutton_pane (struct Painter *painter,
 
   if (w_state == WIDGET_STATE_HOVER
       || w_state == WIDGET_STATE_CANCELLING)
-    cairo_set_source_rgb (cr, 0.0, 0.3, 1.0); //bluish for hover or cancelling
+    cairo_set_source_rgb (cr, 0.7, 0.7, 0.7); //bluish for hover or cancelling
   else if (b_state == BUTTON_STATE_PRESSED)
     cairo_set_source_rgb (cr, .5, .5, .5); //grey for pressed
   else if (w_state == WIDGET_STATE_DISABLED)
     cairo_set_source_rgb (cr, .75, .75, .75);
   else
-    cairo_set_source_rgb (cr, 1.0, 1.0, 1.0); //white otherwise
+    cairo_set_source_rgb (cr, 0.6, 0.6, 0.6); //white otherwise
 
-  cairo_set_line_width (cr, 2);
+  cairo_set_line_width (cr, 1);
   int x_p = x;
   int y_p = y;
   painter_translate_xy(painter, &x_p, &y_p);
-  cairo_rectangle (cr, x_p, y_p, w, h);
+//  cairo_rectangle (cr, x_p, y_p, w, h);
+  cairo_move_to (cr,x_p,y_p+5);
+  cairo_curve_to (cr, x_p, y_p+5, x_p, y_p, x_p+5, y_p);
+  cairo_line_to (cr,x_p+w-5,y_p);
+  cairo_curve_to (cr,x_p+w-5,y_p,x_p+w,y_p, x_p+w,y_p+5);
+  cairo_line_to (cr, x_p+w,y_p+h-5);
+  cairo_curve_to (cr,x_p+w,y_p+h-5,x_p+w,y_p+h,x_p+w-5,y_p+h);
+  cairo_line_to (cr,x_p+5,y_p+h);
+  cairo_curve_to (cr,x_p+5,y_p+h,x_p,y_p+h,x_p,y_p+h-5);
+  cairo_close_path(cr);
+    
   cairo_fill_preserve(cr);
 
   if (w_state == WIDGET_STATE_DISABLED)
@@ -58,8 +68,8 @@ default_draw_ybutton(struct Painter *painter, struct YButton *button)
   else
     cairo_set_source_rgb (cr, 0.0, 0.0, 0.0); //black text
   
-  cairo_select_font_face (cr, "Serif", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_BOLD);
-  cairo_set_font_size (cr, 12.0);
+  cairo_select_font_face (cr, "Sans Serif", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_BOLD);
+  cairo_set_font_size (cr, 10.0);
   cairo_text_extents_t extents;
   cairo_text_extents (cr, text, &extents);
   int x = (rect->w - extents.width) / 2;
