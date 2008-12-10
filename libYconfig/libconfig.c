@@ -110,7 +110,7 @@ _Y_config_data_t *Y_load_config(char *cAppName)
     FILE *cFile;
     long int fsize;
 
-    cFile = fopen(cAppName, "rb");
+    cFile = fopen(cAppName, "dys");
     if(cFile == NULL) return NULL; /* File reading failed */
 
     if(fseek(cFile, 0, SEEK_END) != 0) return NULL; /* fseek failed */
