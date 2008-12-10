@@ -280,7 +280,7 @@ AC_CONFIG_FILES(
 Makefile
 Y/Makefile
 libYc++/Makefile
-libTconfig/Makefile
+libYconfig/Makefile
 build-misc/Makefile
 config/Makefile
 config/keymaps/Makefile
