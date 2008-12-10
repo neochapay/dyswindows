@@ -14,16 +14,16 @@ _Y_config_value_t *Y_get_value(const char *config_data, const char *key, const c
  
     char *ptr = strstr(config_data, key);  
     if(ptr == NULL)
-    #if Y_ERROR_STRINGS
-        /* return Y_NOT_FOUND; */
+    #if TCFP_ERROR_STRINGS
+        /* return TCFP_NOT_FOUND; */
     #else
         return NULL;
     #endif  
 
     ptr += setlen;
     if((ptr[0] != '=') && (ptr[0] != ' '))
-    #if Y_ERROR_STRINGS
-        /* return Y_NOT_FOUND; */
+    #if TCFP_ERROR_STRINGS
+        /* return TCFP_NOT_FOUND; */
     #else
         return NULL;
     #endif
@@ -87,7 +87,7 @@ _Y_config_value_t *Y_get_value(const char *config_data, const char *key, const c
     keyValue = malloc ( valLen * sizeof(keyValue) + 1);
     if(keyValue == NULL)
     #if Y_ERROR_STRINGS
-        /* return Y_ALLOC_FAILURE; */
+        /* return TCFP_ALLOC_FAILURE; */
     #else
         return NULL;
     #endif
@@ -107,7 +107,7 @@ void Y_free_config_value(_Y_config_value_t *keyValue)
 _Y_config_data_t *Y_load_config(char *cAppName)
 {
     _Y_config_data_t *config_data;
-    char cFilename = "~/.dys/config/+cAppName";
+    char cFile="~/.dys/config/"+cAppName;
     FILE *cFile;
     long int fsize;
 

@@ -25045,7 +25045,7 @@ else
 fi
 
 
-ac_config_files="$ac_config_files Makefile Y/Makefile libYc++/Makefile build-misc/Makefile config/Makefile config/keymaps/Makefile data/Makefile doc/Makefile doc/doxygen-libYc++.cfg doc/doxygen-Y.cfg modules/Makefile modules/drivers/Makefile modules/drivers/video/Makefile modules/drivers/video/xlib/Makefile modules/drivers/video/glx/Makefile modules/drivers/input/Makefile modules/drivers/input/evdev/Makefile modules/themes/Makefile modules/themes/default/Makefile modules/themes/eau/Makefile modules/wm/Makefile modules/wm/default/Makefile clients/Makefile clients/tools/Makefile clients/tools/startY clients/calculator/Makefile clients/clock/Makefile clients/sample/Makefile clients/terminal/Makefile startY.devel"
+ac_config_files="$ac_config_files Makefile Y/Makefile libYc++/Makefile libYconfig/Makefile build-misc/Makefile config/Makefile config/keymaps/Makefile data/Makefile doc/Makefile doc/doxygen-libYc++.cfg doc/doxygen-Y.cfg modules/Makefile modules/drivers/Makefile modules/drivers/video/Makefile modules/drivers/video/xlib/Makefile modules/drivers/video/glx/Makefile modules/drivers/input/Makefile modules/drivers/input/evdev/Makefile modules/themes/Makefile modules/themes/default/Makefile modules/themes/eau/Makefile modules/wm/Makefile modules/wm/default/Makefile clients/Makefile clients/tools/Makefile clients/tools/startY clients/calculator/Makefile clients/clock/Makefile clients/sample/Makefile clients/terminal/Makefile startY.devel"
 
 
 ac_config_commands="$ac_config_commands chmod-startY.devel"
@@ -25675,6 +25675,7 @@ do
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "Y/Makefile") CONFIG_FILES="$CONFIG_FILES Y/Makefile" ;;
     "libYc++/Makefile") CONFIG_FILES="$CONFIG_FILES libYc++/Makefile" ;;
+    "libYconfig/Makefile") CONFIG_FILES="$CONFIG_FILES libYconfig/Makefile" ;;
     "build-misc/Makefile") CONFIG_FILES="$CONFIG_FILES build-misc/Makefile" ;;
     "config/Makefile") CONFIG_FILES="$CONFIG_FILES config/Makefile" ;;
     "config/keymaps/Makefile") CONFIG_FILES="$CONFIG_FILES config/keymaps/Makefile" ;;
