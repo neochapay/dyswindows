@@ -1,6 +1,6 @@
 include $(top_srcdir)/build-misc/common.mk
 
-SUBDIRS = build-misc Y libYc++ config modules clients data doc
+SUBDIRS = build-misc Y libYc++ config modules clients data doc libYconfig
 
 noinst_SCRIPTS = startY.devel
 
