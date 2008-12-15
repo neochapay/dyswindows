@@ -104,13 +104,14 @@ void Y_free_config_value(_Y_config_value_t *keyValue)
     if(keyValue) free(keyValue);
 }
 
-_Y_config_data_t *Y_load_config(char *cAppName)
+_Y_config_data_t *Y_load_config(const char *cAppName)
 {
     _Y_config_data_t *config_data;
     FILE *cFile;
     long int fsize;
 
-    cFile = fopen(cAppName, "dys");
+    cFile = fopen("~/.dys/".cAppName, "rb");
+    
     if(cFile == NULL) return NULL; /* File reading failed */
 
     if(fseek(cFile, 0, SEEK_END) != 0) return NULL; /* fseek failed */

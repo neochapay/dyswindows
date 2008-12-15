@@ -1,8 +1,8 @@
 #ifndef LIB_Y_CONF_H
 #define LIB_Y_CONF_H
 
-//#include <string>
-//#include <iostream>
+#include <string.h>
+#include <stdlib.h>
 
 #ifdef __cplusplus
 extern "C"{
@@ -39,7 +39,7 @@ typedef char _Y_config_data_t;
 typedef char _Y_config_value_t;
 
 /* get config data from file */
-_Y_config_data_t *Y_load_config(char *cAppName);
+_Y_config_data_t *Y_load_config(const char *cAppName);
 
 /* free config data */ 
 void Y_free_config_data(_Y_config_data_t *config_data);

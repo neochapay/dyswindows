@@ -102,6 +102,7 @@ widget/ytogglebutton.h \
 widget/ycheckbox.h \
 widget/yradiobutton.h \
 widget/yradiogroup.h \
+widget/ymenu.h \
 widget/yrowlayout.h \
 widget/ylayoutcell.h \
 input/pointer.h \

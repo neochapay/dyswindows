@@ -75,9 +75,10 @@ am__objects_1 = modules/module.$(OBJEXT) object/object.$(OBJEXT) \
 	widget/label.$(OBJEXT) widget/gridlayout.$(OBJEXT) \
 	widget/canvas.$(OBJEXT) widget/console.$(OBJEXT) \
 	widget/ycontainer.$(OBJEXT) widget/ybin.$(OBJEXT) \
-	widget/ybutton.$(OBJEXT) widget/ytogglebutton.$(OBJEXT) \
-	widget/ycheckbox.$(OBJEXT) widget/yradiobutton.$(OBJEXT) \
-	widget/yradiogroup.$(OBJEXT) widget/yrowlayout.$(OBJEXT)
+	widget/ybutton.$(OBJEXT) widget/ymenu.$(OBJEXT) \
+	widget/ytogglebutton.$(OBJEXT) widget/ycheckbox.$(OBJEXT) \
+	widget/yradiobutton.$(OBJEXT) widget/yradiogroup.$(OBJEXT) \
+	widget/yrowlayout.$(OBJEXT)
 am_Y_OBJECTS = buffer/buffer.$(OBJEXT) buffer/bufferio.$(OBJEXT) \
 	buffer/painter.$(OBJEXT) buffer/imagebuffer.$(OBJEXT) \
 	modules/theme.$(OBJEXT) modules/windowmanager.$(OBJEXT) \
@@ -120,6 +121,7 @@ am__objects_2 = modules/traceY-module.$(OBJEXT) \
 	widget/traceY-canvas.$(OBJEXT) widget/traceY-console.$(OBJEXT) \
 	widget/traceY-ycontainer.$(OBJEXT) \
 	widget/traceY-ybin.$(OBJEXT) widget/traceY-ybutton.$(OBJEXT) \
+	widget/traceY-ymenu.$(OBJEXT) \
 	widget/traceY-ytogglebutton.$(OBJEXT) \
 	widget/traceY-ycheckbox.$(OBJEXT) \
 	widget/traceY-yradiobutton.$(OBJEXT) \
@@ -361,6 +363,7 @@ Y_class_sources = \
 	widget/ycontainer.c \
 	widget/ybin.c \
 	widget/ybutton.c \
+	widget/ymenu.c \
 	widget/ytogglebutton.c \
 	widget/ycheckbox.c \
 	widget/yradiobutton.c \
@@ -375,6 +378,7 @@ Y_class_defs = \
 	Label.ycd \
 	Screen.ycd \
 	Widget.ycd \
+	YMenu.ycd \
 	YRowLayout.ycd \
 	YRadioGroup.ycd \
 	YBin.ycd \
@@ -395,6 +399,7 @@ Y_class_files = \
 	.ycl/Label.yc \
 	.ycl/Screen.yc \
 	.ycl/Widget.yc \
+	.ycl/YMenu.yc \
 	.ycl/YRowLayout.yc \
 	.ycl/YRadioGroup.yc \
 	.ycl/YBin.yc \
@@ -500,6 +505,7 @@ widget/ytogglebutton.h \
 widget/ycheckbox.h \
 widget/yradiobutton.h \
 widget/yradiogroup.h \
+widget/ymenu.h \
 widget/yrowlayout.h \
 widget/ylayoutcell.h \
 input/pointer.h \
@@ -795,6 +801,8 @@ widget/ybin.$(OBJEXT): widget/$(am__dirstamp) \
 	widget/$(DEPDIR)/$(am__dirstamp)
 widget/ybutton.$(OBJEXT): widget/$(am__dirstamp) \
 	widget/$(DEPDIR)/$(am__dirstamp)
+widget/ymenu.$(OBJEXT): widget/$(am__dirstamp) \
+	widget/$(DEPDIR)/$(am__dirstamp)
 widget/ytogglebutton.$(OBJEXT): widget/$(am__dirstamp) \
 	widget/$(DEPDIR)/$(am__dirstamp)
 widget/ycheckbox.$(OBJEXT): widget/$(am__dirstamp) \
@@ -922,6 +930,8 @@ widget/traceY-ycontainer.$(OBJEXT): widget/$(am__dirstamp) \
 widget/traceY-ybin.$(OBJEXT): widget/$(am__dirstamp) \
 	widget/$(DEPDIR)/$(am__dirstamp)
 widget/traceY-ybutton.$(OBJEXT): widget/$(am__dirstamp) \
+	widget/$(DEPDIR)/$(am__dirstamp)
+widget/traceY-ymenu.$(OBJEXT): widget/$(am__dirstamp) \
 	widget/$(DEPDIR)/$(am__dirstamp)
 widget/traceY-ytogglebutton.$(OBJEXT): widget/$(am__dirstamp) \
 	widget/$(DEPDIR)/$(am__dirstamp)
@@ -1065,6 +1075,7 @@ mostlyclean-compile:
 	-rm -f widget/traceY-ycheckbox.$(OBJEXT)
 	-rm -f widget/traceY-ycontainer.$(OBJEXT)
 	-rm -f widget/traceY-ylayoutcell.$(OBJEXT)
+	-rm -f widget/traceY-ymenu.$(OBJEXT)
 	-rm -f widget/traceY-yradiobutton.$(OBJEXT)
 	-rm -f widget/traceY-yradiogroup.$(OBJEXT)
 	-rm -f widget/traceY-yrowlayout.$(OBJEXT)
@@ -1076,6 +1087,7 @@ mostlyclean-compile:
 	-rm -f widget/ycheckbox.$(OBJEXT)
 	-rm -f widget/ycontainer.$(OBJEXT)
 	-rm -f widget/ylayoutcell.$(OBJEXT)
+	-rm -f widget/ymenu.$(OBJEXT)
 	-rm -f widget/yradiobutton.$(OBJEXT)
 	-rm -f widget/yradiogroup.$(OBJEXT)
 	-rm -f widget/yrowlayout.$(OBJEXT)
@@ -1188,6 +1200,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/traceY-ycheckbox.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/traceY-ycontainer.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/traceY-ylayoutcell.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/traceY-ymenu.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/traceY-yradiobutton.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/traceY-yradiogroup.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/traceY-yrowlayout.Po@am__quote@
@@ -1199,6 +1212,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/ycheckbox.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/ycontainer.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/ylayoutcell.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/ymenu.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/yradiobutton.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/yradiogroup.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@widget/$(DEPDIR)/yrowlayout.Po@am__quote@
@@ -1970,6 +1984,20 @@ widget/traceY-ybutton.obj: widget/ybutton.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(traceY_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o widget/traceY-ybutton.obj `if test -f 'widget/ybutton.c'; then $(CYGPATH_W) 'widget/ybutton.c'; else $(CYGPATH_W) '$(srcdir)/widget/ybutton.c'; fi`
 
+widget/traceY-ymenu.o: widget/ymenu.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(traceY_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT widget/traceY-ymenu.o -MD -MP -MF widget/$(DEPDIR)/traceY-ymenu.Tpo -c -o widget/traceY-ymenu.o `test -f 'widget/ymenu.c' || echo '$(srcdir)/'`widget/ymenu.c
+@am__fastdepCC_TRUE@	mv -f widget/$(DEPDIR)/traceY-ymenu.Tpo widget/$(DEPDIR)/traceY-ymenu.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='widget/ymenu.c' object='widget/traceY-ymenu.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(traceY_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o widget/traceY-ymenu.o `test -f 'widget/ymenu.c' || echo '$(srcdir)/'`widget/ymenu.c
+
+widget/traceY-ymenu.obj: widget/ymenu.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(traceY_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT widget/traceY-ymenu.obj -MD -MP -MF widget/$(DEPDIR)/traceY-ymenu.Tpo -c -o widget/traceY-ymenu.obj `if test -f 'widget/ymenu.c'; then $(CYGPATH_W) 'widget/ymenu.c'; else $(CYGPATH_W) '$(srcdir)/widget/ymenu.c'; fi`
+@am__fastdepCC_TRUE@	mv -f widget/$(DEPDIR)/traceY-ymenu.Tpo widget/$(DEPDIR)/traceY-ymenu.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='widget/ymenu.c' object='widget/traceY-ymenu.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(traceY_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o widget/traceY-ymenu.obj `if test -f 'widget/ymenu.c'; then $(CYGPATH_W) 'widget/ymenu.c'; else $(CYGPATH_W) '$(srcdir)/widget/ymenu.c'; fi`
+
 widget/traceY-ytogglebutton.o: widget/ytogglebutton.c
 @am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(traceY_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT widget/traceY-ytogglebutton.o -MD -MP -MF widget/$(DEPDIR)/traceY-ytogglebutton.Tpo -c -o widget/traceY-ytogglebutton.o `test -f 'widget/ytogglebutton.c' || echo '$(srcdir)/'`widget/ytogglebutton.c
 @am__fastdepCC_TRUE@	mv -f widget/$(DEPDIR)/traceY-ytogglebutton.Tpo widget/$(DEPDIR)/traceY-ytogglebutton.Po
@@ -2406,6 +2434,9 @@ Screen.ycd: $(yclpp) $(yclpp_lib)/YCL/YCD.pm $(srcdir)/screen/screen.c
 
 Widget.ycd: $(yclpp) $(yclpp_lib)/YCL/YCD.pm $(srcdir)/widget/widget.c
 	yclpp_libdir="$(yclpp_lib)" $(yclpp) -d Widget -o $@ $(srcdir)/widget/widget.c
+
+YMenu.ycd: $(yclpp) $(yclpp_lib)/YCL/YCD.pm $(srcdir)/widget/ymenu.c
+	yclpp_libdir="$(yclpp_lib)" $(yclpp) -d YMenu -o $@ $(srcdir)/widget/ymenu.c
 
 YRowLayout.ycd: $(yclpp) $(yclpp_lib)/YCL/YCD.pm $(srcdir)/widget/yrowlayout.c
 	yclpp_libdir="$(yclpp_lib)" $(yclpp) -d YRowLayout -o $@ $(srcdir)/widget/yrowlayout.c
