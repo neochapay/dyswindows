@@ -13,6 +13,7 @@ widget/console.c
 widget/ycontainer.c
 widget/ybin.c
 widget/ybutton.c
+widget/ymenu.c
 widget/ytogglebutton.c
 widget/ycheckbox.c
 widget/yradiobutton.c

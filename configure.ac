@@ -281,6 +281,7 @@ Makefile
 Y/Makefile
 libYc++/Makefile
 libYconfig/Makefile
+libYconfig/examples/Makefile
 build-misc/Makefile
 config/Makefile
 config/keymaps/Makefile
