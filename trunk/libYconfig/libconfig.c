@@ -110,7 +110,9 @@ _Y_config_data_t *Y_load_config(const char *cAppName)
     FILE *cFile;
     long int fsize;
 
-    cFile = fopen("~/.dys/".cAppName, "rb");
+    char path[256];
+    sprintf(path, "~/.dys/%s", cAppName);
+    cFile = fopen(path, "rb");
     
     if(cFile == NULL) return NULL; /* File reading failed */
 
