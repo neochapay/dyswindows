@@ -52,6 +52,9 @@ PROGRAMS = $(bin_PROGRAMS)
 am_yconfig_example_OBJECTS = example.$(OBJEXT)
 yconfig_example_OBJECTS = $(am_yconfig_example_OBJECTS)
 yconfig_example_LDADD = $(LDADD)
+yconfig_example_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(yconfig_example_LDFLAGS) $(LDFLAGS) -o $@
 DEFAULT_INCLUDES = -I. -I$(top_builddir)/Y
 depcomp = $(SHELL) $(top_srcdir)/build-misc/depcomp
 am__depfiles_maybe = depfiles
@@ -204,7 +207,7 @@ top_srcdir = ../..
 yconfig_example_SOURCES = example.c
 
 #INCLUDES = $(LIBSIGC_CPPFLAGS)
-yconfig_example = -L ../ -lconfig
+yconfig_example_LDFLAGS = -L../ -lYconfig
 all: all-am
 
 .SUFFIXES:
@@ -268,7 +271,7 @@ clean-binPROGRAMS:
 	done
 yconfig_example$(EXEEXT): $(yconfig_example_OBJECTS) $(yconfig_example_DEPENDENCIES) 
 	@rm -f yconfig_example$(EXEEXT)
-	$(LINK) $(yconfig_example_OBJECTS) $(yconfig_example_LDADD) $(LIBS)
+	$(yconfig_example_LINK) $(yconfig_example_OBJECTS) $(yconfig_example_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)

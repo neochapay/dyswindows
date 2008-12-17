@@ -111,7 +111,7 @@ _Y_config_data_t *Y_load_config(const char *cAppName)
     long int fsize;
 
     char path[256];
-    sprintf(path, "~/.dys/%s", cAppName);
+    sprintf(path, "%s/.dys/%s",getenv("HOME"), cAppName);
     cFile = fopen(path, "rb");
     
     if(cFile == NULL) return NULL; /* File reading failed */

@@ -3,4 +3,4 @@ yconfig_example_SOURCES = example.c
 
 #INCLUDES = $(LIBSIGC_CPPFLAGS)
 
-yconfig_example = -L ../ -lconfig
+yconfig_example_LDFLAGS = -L../ -lYconfig
