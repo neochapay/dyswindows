@@ -210,7 +210,7 @@ PKG_CHECK_MODULES(GLITZ_GLX, glitz-glx,
 dnl check that cairo is built to support glitz
 PKG_CHECK_MODULES(CAIRO_GLITZ, cairo-glitz, [have_glitz=yes], [AC_MSG_RESULT([no, disabling gl support]);have_glitz=no])
 ],
-[AC_MSG_RESULT([no, disabling gl support]);have_glitz=no])
+[AC_MSG_RESULT([no, disabling gl support]);have_glitz=yes])
 
 AC_SUBST(GLITZ_GLX_CFLAGS)
 AC_SUBST(GLITZ_GLX_LIBS)

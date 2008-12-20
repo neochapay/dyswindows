@@ -1,4 +1,5 @@
-
+#include <stdlib.h>
+#include <string.h>
 #include "terminal.h"
 
 #include "VTScreenView.h"

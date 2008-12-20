@@ -209,7 +209,7 @@ main (int argc, char **argv)
               if (returns[1] > 0)
                 {
                   char buffer[returns[1]+1];
-                  read (pipedes[0], buffer, returns[1]);
+//                  read (pipedes[0], buffer, returns[1]);
                   buffer[returns[1]] = '\0';
                   fprintf (stderr, "Y: %s\n", buffer);
                 }
@@ -262,7 +262,7 @@ main (int argc, char **argv)
       /* signal to the parent process that all is well */
       status[0] = EXIT_SUCCESS;
       status[1] = 0;
-      write (pipedes[1], status, sizeof (int) * 2);
+//      write (pipedes[1], status, sizeof (int) * 2);
 
       close (pipedes[1]);
 

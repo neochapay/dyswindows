@@ -20,6 +20,8 @@
 #include <Y/c++/message.h>
 #include <Y/c++/timer.h>
 
+#include <stdlib.h>
+
 #include <pthread.h>
 
 #include "thread_support.h"
