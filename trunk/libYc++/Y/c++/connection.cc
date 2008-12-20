@@ -35,6 +35,8 @@
 #include <unistd.h>
 #include <pthread.h>
 
+#include <string.h>
+
 #include "thread_support.h"
 
 /** \defgroup comm Network communication

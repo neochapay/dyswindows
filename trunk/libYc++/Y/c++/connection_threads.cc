@@ -23,6 +23,8 @@
 #include <iostream>
 #include <pthread.h>
 
+#include <stdlib.h>
+
 #include "thread_support.h"
 
 void *

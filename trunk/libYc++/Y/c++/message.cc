@@ -23,6 +23,7 @@
 #include <string>
 #include <sstream>
 #include <stdexcept>
+#include <stdlib.h>
 
 #include <Y/c++/connection.h>
 #include <Y/c++/message.h>

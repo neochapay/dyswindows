@@ -26,9 +26,6 @@ Screen.ycd: $(yclpp) $(yclpp_lib)/YCL/YCD.pm $(srcdir)/screen/screen.c
 Widget.ycd: $(yclpp) $(yclpp_lib)/YCL/YCD.pm $(srcdir)/widget/widget.c
 	yclpp_libdir="$(yclpp_lib)" $(yclpp) -d Widget -o $@ $(srcdir)/widget/widget.c
 
-YMenu.ycd: $(yclpp) $(yclpp_lib)/YCL/YCD.pm $(srcdir)/widget/ymenu.c
-	yclpp_libdir="$(yclpp_lib)" $(yclpp) -d YMenu -o $@ $(srcdir)/widget/ymenu.c
-
 YRowLayout.ycd: $(yclpp) $(yclpp_lib)/YCL/YCD.pm $(srcdir)/widget/yrowlayout.c
 	yclpp_libdir="$(yclpp_lib)" $(yclpp) -d YRowLayout -o $@ $(srcdir)/widget/yrowlayout.c
 
@@ -62,9 +59,6 @@ Desktop.ycd: $(yclpp) $(yclpp_lib)/YCL/YCD.pm $(srcdir)/widget/desktop.c
 YButton.ycd: $(yclpp) $(yclpp_lib)/YCL/YCD.pm $(srcdir)/widget/ybutton.c
 	yclpp_libdir="$(yclpp_lib)" $(yclpp) -d YButton -o $@ $(srcdir)/widget/ybutton.c
 
-YButton.ycd: $(yclpp) $(yclpp_lib)/YCL/YCD.pm $(srcdir)/widget/ymenu.c
-	yclpp_libdir="$(yclpp_lib)" $(yclpp) -d Ymenu -o $@ $(srcdir)/widget/ymenu.c
-
 
 Y_class_sources = \
 	modules/module.c \
@@ -80,7 +74,6 @@ Y_class_sources = \
 	widget/ycontainer.c \
 	widget/ybin.c \
 	widget/ybutton.c \
-	widget/ymenu.c \
 	widget/ytogglebutton.c \
 	widget/ycheckbox.c \
 	widget/yradiobutton.c \
@@ -95,7 +88,6 @@ Y_class_defs = \
 	Label.ycd \
 	Screen.ycd \
 	Widget.ycd \
-	YMenu.ycd \
 	YRowLayout.ycd \
 	YRadioGroup.ycd \
 	YBin.ycd \
@@ -106,8 +98,7 @@ Y_class_defs = \
 	Console.ycd \
 	YRadioButton.ycd \
 	Desktop.ycd \
-	YButton.ycd \
-	YMenu.ycd
+	YButton.ycd
 
 Y_class_files = \
 	.ycl/Canvas.yc \
@@ -117,7 +108,6 @@ Y_class_files = \
 	.ycl/Label.yc \
 	.ycl/Screen.yc \
 	.ycl/Widget.yc \
-	.ycl/YMenu.yc \
 	.ycl/YRowLayout.yc \
 	.ycl/YRadioGroup.yc \
 	.ycl/YBin.yc \

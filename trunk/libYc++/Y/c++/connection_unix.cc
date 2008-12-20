@@ -21,6 +21,9 @@
 #include <cerrno>
 #include <iostream>
 
+#include <stdlib.h>
+#include <string.h>
+
 #include <sys/socket.h>
 #include <sys/un.h>
 
@@ -36,7 +39,7 @@ Y::Connection::unixInitialise (const char *display)
 
   if (r != 0)
     {
-      std::cerr << "Failed to connect to Y Server via Unix domain socket: " << std::strerror(errno) << std::endl;
+      std::cerr << "Failed to connect to Y Server via Unix domain socket: " << strerror(errno) << std::endl;
       abort();
     }
 
@@ -67,7 +70,7 @@ Y::Connection::unixInitialise (const char *display)
     ssize_t len = sendmsg(control_fd, &msg, 0);
     if (len == -1)
       {
-        std::cerr << "Failed to send authenticate message to Y server: " << std::strerror(errno) << std::endl;
+        std::cerr << "Failed to send authenticate message to Y server: " << strerror(errno) << std::endl;
         abort();
       }
   }
@@ -85,7 +88,7 @@ Y::Connection::unixInitialise (const char *display)
     ssize_t len = recvmsg(control_fd, &msg, 0);
     if (len == -1)
       {
-        std::cerr << "Failed to read control message from Y server (during connection setup): " << std::strerror(errno) << std::endl;
+        std::cerr << "Failed to read control message from Y server (during connection setup): " << strerror(errno) << std::endl;
         abort();
       }
     else if (len == 0)

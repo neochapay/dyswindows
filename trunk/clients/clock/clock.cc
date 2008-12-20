@@ -24,6 +24,8 @@
 #include <ctime>
 #include <sys/time.h>
 
+#include <stdlib.h>
+
 #define COS30    (0.8660254)
 #define SIN30    (0.5)
 

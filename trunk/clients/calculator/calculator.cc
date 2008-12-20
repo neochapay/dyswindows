@@ -22,6 +22,7 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
+#include <stdlib.h>
 
 using namespace sigc;
 using namespace std;
