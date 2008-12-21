@@ -8,7 +8,6 @@
 #include <Y/object/class_p.h>
 
 #include <Y/modules/theme.h>
-//#include <Y/object/object_p.h>
 #include <Y/object/object_p.h>
 #include <Y/text/font.h>
 
