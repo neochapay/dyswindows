@@ -1,3 +1,4 @@
+
 #ifndef Y_WIDGET_MENU_H
 #define Y_WIDGET_MENU_H
 
