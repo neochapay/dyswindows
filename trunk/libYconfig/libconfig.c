@@ -111,8 +111,32 @@ _Y_config_data_t *Y_load_config(const char *cAppName)
     long int fsize;
 
     char path[256];
-    sprintf(path, "%s/.dys/%s",getenv("HOME"), cAppName);
-    cFile = fopen(path, "rb");
+    char user_path[256];
+    char system_path[256];
+    
+    sprintf(user_path, "%s/.dys/%s",getenv("HOME"), cAppName);
+    sprintf(system_path, "/etc/dys/defconfig/%s", cAppName);
+    
+    if(!fopen(user_path, "r"))
+    {
+	printf("libYconfig:\tcan not load user config\n\t\tload system config file\n");
+	
+	if(!fopen(system_path, "r"))
+	    {
+		printf("libYconfig:\tcan not load system config file\n\t\tFATAL ERROR !\n");
+		exit;
+	    }
+	    else
+	    {
+		cFile = fopen(system_path,"rb");
+	    }
+    }
+    else
+    {
+	cFile = fopen(user_path, "rb");
+    }
+
+//    cFile = fopen(path, "rb");
     
     if(cFile == NULL) return NULL; /* File reading failed */
 
