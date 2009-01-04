@@ -18225,189 +18225,6 @@ echo "${ECHO_T}not using GCC" >&6; }
  fi
 
 
- { echo "$as_me:$LINENO: checking gcc warning flag(s) -Werror" >&5
-echo $ECHO_N "checking gcc warning flag(s) -Werror... $ECHO_C" >&6; }
- if test "${GCC-no}" = yes
- then
-
-   ac_ext=c
-ac_cpp='$CPP $CPPFLAGS'
-ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-ac_compiler_gnu=$ac_cv_c_compiler_gnu
-
-   oldcflags="${CFLAGS-}"
-   CFLAGS="${CFLAGS-} ${CWARNS} -Werror -Werror"
-   cat >conftest.$ac_ext <<_ACEOF
-/* confdefs.h.  */
-_ACEOF
-cat confdefs.h >>conftest.$ac_ext
-cat >>conftest.$ac_ext <<_ACEOF
-/* end confdefs.h.  */
-
-#include <string.h>
-#include <stdio.h>
-
-const char *a = "a";
-
-const char *foo(void);
-inline const char *foo(void) {return a;}
-
-int main(void);
-
-int
-main ()
-{
-
-    strcmp(foo(),"b"); fprintf(stdout,"test ok\n");
-
-  ;
-  return 0;
-}
-_ACEOF
-rm -f conftest.$ac_objext
-if { (ac_try="$ac_compile"
-case "(($ac_try" in
-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
-  *) ac_try_echo=$ac_try;;
-esac
-eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
-  (eval "$ac_compile") 2>conftest.er1
-  ac_status=$?
-  grep -v '^ *+' conftest.er1 >conftest.err
-  rm -f conftest.er1
-  cat conftest.err >&5
-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
-  (exit $ac_status); } && {
-	 test -z "$ac_c_werror_flag" ||
-	 test ! -s conftest.err
-       } && test -s conftest.$ac_objext; then
-
-   CWARNS="${CWARNS}-Werror "
-   gcc_ok=yes
-   if test x = xgcc; then
-     { echo "$as_me:$LINENO: result: ok" >&5
-echo "${ECHO_T}ok" >&6; }
-   fi
-
-else
-  echo "$as_me: failed program was:" >&5
-sed 's/^/| /' conftest.$ac_ext >&5
-
-
-   gcc_ok=no
-   if test x = xgcc; then
-     { echo "$as_me:$LINENO: result: no" >&5
-echo "${ECHO_T}no" >&6; }
-   fi
-
-fi
-
-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
-   CFLAGS="${oldcflags}"
-   ac_ext=c
-ac_cpp='$CPP $CPPFLAGS'
-ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-ac_compiler_gnu=$ac_cv_c_compiler_gnu
-
-
-
-   if test x != xgcc; then
-
-   ac_ext=cpp
-ac_cpp='$CXXCPP $CPPFLAGS'
-ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
-
-   oldcxxflags="${CXXFLAGS-}"
-   CXXFLAGS="${CXXFLAGS-} ${CXXWARNS} -Werror -Werror"
-   cat >conftest.$ac_ext <<_ACEOF
-/* confdefs.h.  */
-_ACEOF
-cat confdefs.h >>conftest.$ac_ext
-cat >>conftest.$ac_ext <<_ACEOF
-/* end confdefs.h.  */
-
-#include <string.h>
-#include <stdio.h>
-
-const char *a = "a";
-
-const char *foo(void);
-inline const char *foo(void) {return a;}
-
-int main(void);
-
-int
-main ()
-{
-
-    strcmp(foo(),"b"); fprintf(stdout,"test ok\n");
-
-  ;
-  return 0;
-}
-_ACEOF
-rm -f conftest.$ac_objext
-if { (ac_try="$ac_compile"
-case "(($ac_try" in
-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
-  *) ac_try_echo=$ac_try;;
-esac
-eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
-  (eval "$ac_compile") 2>conftest.er1
-  ac_status=$?
-  grep -v '^ *+' conftest.er1 >conftest.err
-  rm -f conftest.er1
-  cat conftest.err >&5
-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
-  (exit $ac_status); } && {
-	 test -z "$ac_cxx_werror_flag" ||
-	 test ! -s conftest.err
-       } && test -s conftest.$ac_objext; then
-
-   CXXWARNS="${CXXWARNS}-Werror "
-   if test x$gcc_ok = xyes; then
-     { echo "$as_me:$LINENO: result: ok" >&5
-echo "${ECHO_T}ok" >&6; }
-   else
-     { echo "$as_me:$LINENO: result: g++ only" >&5
-echo "${ECHO_T}g++ only" >&6; }
-   fi
-
-else
-  echo "$as_me: failed program was:" >&5
-sed 's/^/| /' conftest.$ac_ext >&5
-
-
-   if test x$gcc_ok = xyes; then
-     { echo "$as_me:$LINENO: result: gcc only" >&5
-echo "${ECHO_T}gcc only" >&6; }
-   else
-     { echo "$as_me:$LINENO: result: no" >&5
-echo "${ECHO_T}no" >&6; }
-   fi
-
-fi
-
-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
-   CXXFLAGS="${oldcxxflags}"
-   ac_ext=c
-ac_cpp='$CPP $CPPFLAGS'
-ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-ac_compiler_gnu=$ac_cv_c_compiler_gnu
-
-   fi
-
- else
-  { echo "$as_me:$LINENO: result: not using GCC" >&5
-echo "${ECHO_T}not using GCC" >&6; }
- fi
-
-
  { echo "$as_me:$LINENO: checking gcc linker warning flag(s) --fatal-warnings" >&5
 echo $ECHO_N "checking gcc linker warning flag(s) --fatal-warnings... $ECHO_C" >&6; }
  if test "${GCC-no}" = yes
@@ -18940,8 +18757,8 @@ _ACEOF
         :
 else
         acx_pthread_ok=no
-        { { echo "$as_me:$LINENO: error: Y requires a posix thread implementation to compile" >&5
-echo "$as_me: error: Y requires a posix thread implementation to compile" >&2;}
+        { { echo "$as_me:$LINENO: error: DYSwindow requires a posix thread implementation to compile" >&5
+echo "$as_me: error: DYSwindow requires a posix thread implementation to compile" >&2;}
    { (exit 1); exit 1; }; }
 fi
 ac_ext=c
@@ -19845,10 +19662,10 @@ fi
 	{ echo "$as_me:$LINENO: result: no" >&5
 echo "${ECHO_T}no" >&6; }
                 { echo "$as_me:$LINENO: result: no, disabling gl support" >&5
-echo "${ECHO_T}no, disabling gl support" >&6; };have_glitz=yes
+echo "${ECHO_T}no, disabling gl support" >&6; };have_glitz=no
 elif test $pkg_failed = untried; then
 	{ echo "$as_me:$LINENO: result: no, disabling gl support" >&5
-echo "${ECHO_T}no, disabling gl support" >&6; };have_glitz=yes
+echo "${ECHO_T}no, disabling gl support" >&6; };have_glitz=no
 else
 	GLITZ_GLX_CFLAGS=$pkg_cv_GLITZ_GLX_CFLAGS
 	GLITZ_GLX_LIBS=$pkg_cv_GLITZ_GLX_LIBS

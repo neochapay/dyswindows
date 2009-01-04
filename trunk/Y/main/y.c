@@ -209,7 +209,7 @@ main (int argc, char **argv)
               if (returns[1] > 0)
                 {
                   char buffer[returns[1]+1];
-                  read (pipedes[0], buffer, returns[1]);
+                  read(pipedes[0], buffer, returns[1]);
                   buffer[returns[1]] = '\0';
                   fprintf (stderr, "Y: %s\n", buffer);
                 }
