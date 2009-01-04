@@ -147,17 +147,14 @@ C_GCC_TRY_FLAGS([-Wnested-externs], [gcc])
 C_GCC_TRY_FLAGS([-Wstrict-prototypes -Wmissing-prototypes], [gcc])
 C_GCC_TRY_FLAGS([-Wmissing-declarations], [gcc])
 C_GCC_TRY_FLAGS([-W -Wno-unused])
-dnl libsigc++ has shadow violations, sigh
-dnl C_GCC_TRY_FLAGS([-Wno-shadow])
 C_GCC_TRY_FLAGS([-Wundef])
 C_GCC_TRY_FLAGS([-Wpacked])
 C_GCC_TRY_FLAGS([-Wbad-function-cast], [gcc])
 C_GCC_TRY_FLAGS([-Wfloat-equal])
 C_GCC_LD_TRY_FLAGS([--warn-common])
-C_GCC_TRY_FLAGS([-Werror])
 C_GCC_LD_TRY_FLAGS([--fatal-warnings])
 
-ACX_PTHREAD(,[AC_MSG_ERROR([Y requires a posix thread implementation to compile])])
+ACX_PTHREAD(,[AC_MSG_ERROR([DYSwindow requires a posix thread implementation to compile])])
 
 if test x"$PTHREAD_CFLAGS" = x
 then
@@ -210,7 +207,7 @@ PKG_CHECK_MODULES(GLITZ_GLX, glitz-glx,
 dnl check that cairo is built to support glitz
 PKG_CHECK_MODULES(CAIRO_GLITZ, cairo-glitz, [have_glitz=yes], [AC_MSG_RESULT([no, disabling gl support]);have_glitz=no])
 ],
-[AC_MSG_RESULT([no, disabling gl support]);have_glitz=yes])
+[AC_MSG_RESULT([no, disabling gl support]);have_glitz=no])
 
 AC_SUBST(GLITZ_GLX_CFLAGS)
 AC_SUBST(GLITZ_GLX_LIBS)
